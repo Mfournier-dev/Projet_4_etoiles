@@ -13,4 +13,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Business\Services\" />
+    <Folder Include="DataAccess\DAO\" />
+    <Folder Include="DataAccess\DTO\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
 </Project>
