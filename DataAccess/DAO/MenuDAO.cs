@@ -23,11 +23,11 @@ public class MenuDAO : IDAO<MenuDTO>
 
     public List<MenuDTO> GetAll()
     {
-        throw new NotImplementedException();
+        return this.context.Menu.ToList();
     }
 
     public MenuDTO GetById(int id)
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException();//Faire le return
     }
 }

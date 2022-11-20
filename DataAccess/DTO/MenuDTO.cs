@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Projet_4_etoiles.DataAccess.DTO;
 
 [Table("T_Articles")]
-public class MenuDTO
+public class MenuDTO : IDTO
 {
     [Column("Id")]
     [Key]
