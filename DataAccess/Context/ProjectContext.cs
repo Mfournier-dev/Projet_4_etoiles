@@ -12,6 +12,8 @@ namespace Projet_4_etoiles.DataAccess.Context
     {
         public DbSet<MenuDTO> Menu { get; set; }
 
+        public DbSet<UtilisationDTO> Utilisations { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             //options.UseSqlServer("Server=.\\SQL2019EXPRESS;Database=4Estrellas;Integrated security=true;TrustServerCertificate=true;");
