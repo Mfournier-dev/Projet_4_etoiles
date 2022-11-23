@@ -11,17 +11,17 @@ namespace Projet_4_etoiles.DataAccess.DTO;
 [Table("T_Articles")]
 public class MenuDTO : IDTO
 {
-    [Column("Id")]
+    [Column("IdArticle")]
     [Key]
     public int Id { get; set; }
 
-    [Column("Name")]
+    [Column("NomArticle")]
     public string Name { get; set; }
 
-    [Column("Category")]
+    [Column("Categorie")]
     public string Category { get; set; }
 
-    [Column("Price")]
+    [Column("Prix")]
     public int Price { get; set; }
 
     public MenuDTO(int id, string name, string category, int price)

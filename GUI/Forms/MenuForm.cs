@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Projet_4_etoiles
+namespace Projet_4_etoiles.GUI.Forms
 {
     public partial class MenuForm : Form
     {

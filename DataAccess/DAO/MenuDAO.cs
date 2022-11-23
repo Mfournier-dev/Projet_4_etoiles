@@ -28,6 +28,6 @@ public class MenuDAO : IDAO<MenuDTO>
 
     public MenuDTO GetById(int id)
     {
-        throw new NotImplementedException();//Faire le return
+        return this.context.Menu.Where(menu => menu.Id == id).Single();
     }
 }
