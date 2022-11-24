@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_4_etoiles.GUI
 {
-    internal interface IForm
+    public interface IForm
     {
     }
 }
