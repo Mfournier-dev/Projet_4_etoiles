@@ -36,13 +36,13 @@ namespace Projet_4_etoiles.DataAccess.DTO
 
         [Column("HeureReservation")]
         [Required]
-        public TimeOnly HeureReservation { get; set; }
+        public DateTime HeureReservation { get; set; }
 
         //public List<TableDTO> Tables { get; set; }
 
         public UtilisationDTO(int nombrePersonnes,
                               int idTable,
-                              TimeOnly heureReservation,
+                              DateTime heureReservation,
                               string? nomReservation = null,
                               string? numeroTelephone = null,
                               DateTime? dateReservation = null)
