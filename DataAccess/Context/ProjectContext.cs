@@ -16,6 +16,9 @@ namespace Projet_4_etoiles.DataAccess.Context
 
         public DbSet<TablesDTO> Tables { get; set; } // il cree un attribut quie s'apelle tables qui va conteinir un valeur 
 
+        public DbSet<CommandeDTO> Commandes { get; set; }
+        public DbSet<CommandesArticlesDTO> CommandesArticles { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             //options.UseSqlServer("Server=.\\SQL2019EXPRESS;Database=4Estrellas;Integrated security=true;TrustServerCertificate=true;");

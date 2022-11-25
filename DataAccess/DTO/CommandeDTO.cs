@@ -14,18 +14,24 @@ namespace Projet_4_etoiles.DataAccess.DTO
     {
         [Column("IdCommande")]
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 
         public int IdCommande { get; set; }
 
         [Column("IdTable")]
+        [Required]
+        
         public int IdTable { get; set; }
         [Column("NombreClients")]
+        [Required]
+        [ForeignKey("IdTable")]
         public int NombreClients { get; set; }
 
         [Column("NombreArticles")]
+        [Required]
         public int? NombreArticles { get; set; }
 
-        public List<MenuDTO> ArticlesCommandes { get; set; }
+        public List<MenuDTO>? ArticlesCommandes { get; set; }
         
         
         /// <summary>
