@@ -16,12 +16,15 @@ public class MenuDTO : IDTO
     public int Id { get; set; }
 
     [Column("NomArticle")]
+    [Required]
     public string Name { get; set; }
 
     [Column("Categorie")]
+    [Required]
     public string Category { get; set; }
 
     [Column("Prix")]
+    [Required]
     public int Price { get; set; }
 
     public MenuDTO(int id, string name, string category, int price)

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.btnAjouter = new System.Windows.Forms.Button();
@@ -37,15 +36,8 @@
             this.lblPlats = new System.Windows.Forms.Label();
             this.lblDessert = new System.Windows.Forms.Label();
             this.lblBreuvage = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(24, 129);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(243, 396);
-            this.checkedListBox1.TabIndex = 0;
             // 
             // checkedListBox2
             // 
@@ -125,6 +117,14 @@
             this.lblBreuvage.TabIndex = 9;
             this.lblBreuvage.Text = "Breuvages";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(24, 129);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(243, 396);
+            this.checkedListBox1.TabIndex = 0;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -147,8 +147,6 @@
         }
 
         #endregion
-
-        private CheckedListBox checkedListBox1;
         private CheckedListBox checkedListBox2;
         private CheckedListBox checkedListBox3;
         private Button btnAjouter;
@@ -157,5 +155,6 @@
         private Label lblPlats;
         private Label lblDessert;
         private Label lblBreuvage;
+        private CheckedListBox checkedListBox1;
     }
 }

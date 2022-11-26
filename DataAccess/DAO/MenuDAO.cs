@@ -30,4 +30,25 @@ public class MenuDAO : IDAO<MenuDTO>
     {
         return this.context.Menu.Where(menu => menu.Id == id).Single();
     }
+
+    public MenuDTO Create(MenuDTO newMenu)
+    {
+        this.context.Menu.Add(newMenu);
+        this.context.SaveChanges();
+        return newMenu;
+    }
+
+    public MenuDTO Update(MenuDTO newMenu)
+    {
+        this.context.Menu.Update(newMenu);
+        this.context.SaveChanges();
+        return newMenu;
+    }
+
+    public MenuDTO Delete(MenuDTO newMenu)
+    {
+        this.context.Menu.Remove(newMenu);
+        this.context.SaveChanges();
+        return newMenu;
+    }
 }

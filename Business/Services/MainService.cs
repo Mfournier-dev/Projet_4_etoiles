@@ -12,6 +12,7 @@ namespace Projet_4_etoiles.Business.Services
         //Ajouter tous les classes services dans le projet.
         private ProjectContext _projectContext;
         private CommandeService _commandeService;
+        private MenuService _menuService;
 
 
         private static MainService INSTANCE;
@@ -22,6 +23,7 @@ namespace Projet_4_etoiles.Business.Services
             // Chaque service doit etre passé, seront contenus dans un singleton.
             this._projectContext = new ProjectContext();
             this._commandeService = new CommandeService(this._projectContext);
+            this._menuService = new MenuService(this._projectContext);
         }
 
         public static MainService GetInstance()
@@ -49,7 +51,10 @@ namespace Projet_4_etoiles.Business.Services
             return this._commandeService;
         }
 
-
+        public MenuService GetMenuService()
+        {
+            return this._menuService;
+        }
     
     }
 }
