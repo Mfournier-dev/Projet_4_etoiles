@@ -6,5 +6,10 @@ namespace Projet_4_etoiles
         {
             InitializeComponent();
         }
+
+        private void btnAssignation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

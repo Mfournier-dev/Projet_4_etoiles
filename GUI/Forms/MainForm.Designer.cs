@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnAssignation = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnAssignation
+            // 
+            this.btnAssignation.Location = new System.Drawing.Point(988, 278);
+            this.btnAssignation.Name = "btnAssignation";
+            this.btnAssignation.Size = new System.Drawing.Size(134, 35);
+            this.btnAssignation.TabIndex = 0;
+            this.btnAssignation.Text = "Réservation";
+            this.btnAssignation.UseVisualStyleBackColor = true;
+            this.btnAssignation.Click += new System.EventHandler(this.btnAssignation_Click);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1213, 549);
+            this.Controls.Add(this.btnAssignation);
+            this.Name = "MainForm";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Button btnAssignation;
     }
 }

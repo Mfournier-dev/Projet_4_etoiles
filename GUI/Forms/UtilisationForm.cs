@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_4_etoiles.Business.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Projet_4_etoiles
 {
     public partial class UtilisationForm : Form
     {
+        //public MainService MainService;
         public UtilisationForm()
         {
             InitializeComponent();

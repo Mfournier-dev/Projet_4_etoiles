@@ -1,18 +1,23 @@
 ﻿using Projet_4_etoiles.DataAccess.Context;
+using Projet_4_etoiles.GUI.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Projet_4_etoiles.Business.Services
 {
     public class MainService : IService
-    {   
+    {
         //Ajouter tous les classes services dans le projet.
+        //private UtilisationForm utilisationForm;
         private ProjectContext _projectContext;
         private CommandeService _commandeService;
+        private UtilisationService _utilisationService;
         private MenuService _menuService;
+
 
 
         private static MainService INSTANCE;
@@ -24,6 +29,7 @@ namespace Projet_4_etoiles.Business.Services
             this._projectContext = new ProjectContext();
             this._commandeService = new CommandeService(this._projectContext);
             this._menuService = new MenuService(this._projectContext);
+            this._utilisationService = new UtilisationService(this._projectContext);
         }
 
         public static MainService GetInstance()
@@ -45,6 +51,12 @@ namespace Projet_4_etoiles.Business.Services
             Application.Exit();
         }
 
+        //public void OpenCoursesWindow() //11.2
+        //{
+        //    this.UtilisationForm.ShowDialog(); //11.3
+        //}
+
+
         //Chaque Service doit avoir une methode similaire comme celle ci-dessous.
         public CommandeService GetCommandeService()
         {
@@ -55,6 +67,11 @@ namespace Projet_4_etoiles.Business.Services
         {
             return this._menuService;
         }
-    
+
+        public UtilisationService GetUtilisationService() 
+        {
+            return this._utilisationService;
+        }
+
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Projet_4_etoiles.DataAccess.DTO
 {
     [Table("T_CommandesArticles")]   
-    public class CommandesArticlesDTO
+    public class CommandesArticlesDTO : IDTO
     {
         [Column("IdCA")]
         [Key]
