@@ -14,6 +14,8 @@ public class TablesDAO : IDAO<TablesDTO>
 {
 	private ProjectContext context; // Creant l'attribut context (je vais l'initialiser dans le constructeur)
 
+
+
 	// Liste Tables
     string[] tablesId = { "Table 01", "Table 02", "Table 03", "Table 04", "Table 05", "Table 06", "Table 07", "Table 08", "Table 09", "Table 10", "Table 11", "Table 12", "Table 13", "Table 14", "Table 15", "Table 16", "Table 17", "Table 18", "Table 19", "Table 20" };
     // Liste Statut
@@ -42,18 +44,21 @@ public class TablesDAO : IDAO<TablesDTO>
 	///*************************** MODIFIER APRES LA FORME
     public void GetbyStatut(String Statut)
     {
+		string[] tablesId = { };
+		List<TablesDTO> StatusTable = new List<TablesDTO>();
 
-        foreach(TablesDTO table in GetAll())
+        foreach (TablesDTO table in GetAll())
 		{
-			if (table.Statut == Statut){
-				
-			}
-		}   // Lambda??
+            //	if (table.Statut == Statut){
+
+            //	adjuntar.StatusTable
+            //	return RelatedImageListAttribute table que cumplen con la funcion en el parametro
+
+
+
+
+        }
+        //}   // Lambda??
     }
-
-
-
-
-
 
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Projet_4_etoiles.Business.Services
 {
     public class MainService : IService
@@ -44,6 +45,7 @@ namespace Projet_4_etoiles.Business.Services
         public void StartApplication()
         {
             Application.Run(new MainForm());
+
         }
 
         public void ExitApplication()

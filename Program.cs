@@ -14,7 +14,8 @@ namespace Projet_4_etoiles
             // see https://aka.ms/applicationconfiguration.
 
             MainService.GetInstance().StartApplication();
-            
+
+
         }
     }
 }
