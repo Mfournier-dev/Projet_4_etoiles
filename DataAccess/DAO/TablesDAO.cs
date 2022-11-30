@@ -6,9 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore;
 
 namespace Projet_4_etoiles.DataAccess.DAO;
 public class TablesDAO : IDAO<TablesDTO>
+
+	// CREATION D'OBJET = Minuscule 
+	// FUNCTION - METHODE = Majuscule 
 
 
 {
@@ -42,15 +47,25 @@ public class TablesDAO : IDAO<TablesDTO>
 	}
 
 	///*************************** MODIFIER APRES LA FORME
-    public void GetbyStatut(String Statut)
+    /*
+	public void GetbyStatut(String Statut)
     {
+		(DbSet<UtilisationDTO>).Where
+
+
+
+
+		
 		string[] tablesId = { };
 		List<TablesDTO> StatusTable = new List<TablesDTO>();
 
         foreach (TablesDTO table in GetAll())
 		{
-            //	if (table.Statut == Statut){
+            	if (table.Statut == Statut){
+				tablesId.Add(table);
+				return tablesId;
 
+	
             //	adjuntar.StatusTable
             //	return RelatedImageListAttribute table que cumplen con la funcion en el parametro
 
@@ -60,5 +75,6 @@ public class TablesDAO : IDAO<TablesDTO>
         }
         //}   // Lambda??
     }
+	*/
 
 }
