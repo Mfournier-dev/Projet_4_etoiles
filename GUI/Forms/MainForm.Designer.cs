@@ -31,6 +31,7 @@
             this.btnAssignation = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAssignation
@@ -67,11 +68,22 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "4 Étoiles ";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Showcard Gothic", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(311, 255);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 53);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "* * * *  ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 563);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAssignation);
@@ -88,5 +100,6 @@
         private Button btnAssignation;
         private Label label1;
         private Label label2;
+        private Label label3;
     }
 }
