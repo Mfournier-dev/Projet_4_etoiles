@@ -17,5 +17,11 @@ namespace Projet_4_etoiles.GUI.Forms
             InitializeComponent();
         }
 
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            comboBoxCategorie.Items.Add("Plats Principaux");
+            comboBoxCategorie.Items.Add("Breuvages");
+            comboBoxCategorie.Items.Add("Desserts");
+        }
     }
 }

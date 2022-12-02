@@ -41,14 +41,14 @@
             this.btnModifierItem = new System.Windows.Forms.Button();
             this.btnDeleteItem = new System.Windows.Forms.Button();
             this.grboxManageItems = new System.Windows.Forms.GroupBox();
-            this.txtNomItem = new System.Windows.Forms.TextBox();
-            this.lblNomItem = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lableId = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
             this.lblPrix = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lableId = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
+            this.lblNomItem = new System.Windows.Forms.Label();
+            this.txtNomItem = new System.Windows.Forms.TextBox();
             this.grboxManageItems.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -191,21 +191,40 @@
             this.grboxManageItems.TabStop = false;
             this.grboxManageItems.Text = "groupBox1";
             // 
-            // txtNomItem
+            // lblID
             // 
-            this.txtNomItem.Location = new System.Drawing.Point(80, 53);
-            this.txtNomItem.Name = "txtNomItem";
-            this.txtNomItem.Size = new System.Drawing.Size(203, 31);
-            this.txtNomItem.TabIndex = 13;
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(80, 233);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(106, 25);
+            this.lblID.TabIndex = 20;
+            this.lblID.Text = "PlaceHolder";
             // 
-            // lblNomItem
+            // lableId
             // 
-            this.lblNomItem.AutoSize = true;
-            this.lblNomItem.Location = new System.Drawing.Point(18, 53);
-            this.lblNomItem.Name = "lblNomItem";
-            this.lblNomItem.Size = new System.Drawing.Size(56, 25);
-            this.lblNomItem.TabIndex = 14;
-            this.lblNomItem.Text = "Nom:";
+            this.lableId.AutoSize = true;
+            this.lableId.Location = new System.Drawing.Point(30, 233);
+            this.lableId.Name = "lableId";
+            this.lableId.Size = new System.Drawing.Size(34, 25);
+            this.lableId.TabIndex = 19;
+            this.lableId.Text = "ID:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 160);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Categorie:";
+            // 
+            // comboBoxCategorie
+            // 
+            this.comboBoxCategorie.FormattingEnabled = true;
+            this.comboBoxCategorie.Location = new System.Drawing.Point(116, 152);
+            this.comboBoxCategorie.Name = "comboBoxCategorie";
+            this.comboBoxCategorie.Size = new System.Drawing.Size(167, 33);
+            this.comboBoxCategorie.TabIndex = 17;
             // 
             // lblPrix
             // 
@@ -223,40 +242,21 @@
             this.textBox1.Size = new System.Drawing.Size(203, 31);
             this.textBox1.TabIndex = 15;
             // 
-            // comboBoxCategorie
+            // lblNomItem
             // 
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.Location = new System.Drawing.Point(116, 152);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(167, 33);
-            this.comboBoxCategorie.TabIndex = 17;
+            this.lblNomItem.AutoSize = true;
+            this.lblNomItem.Location = new System.Drawing.Point(18, 53);
+            this.lblNomItem.Name = "lblNomItem";
+            this.lblNomItem.Size = new System.Drawing.Size(56, 25);
+            this.lblNomItem.TabIndex = 14;
+            this.lblNomItem.Text = "Nom:";
             // 
-            // label1
+            // txtNomItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Categorie:";
-            // 
-            // lableId
-            // 
-            this.lableId.AutoSize = true;
-            this.lableId.Location = new System.Drawing.Point(30, 233);
-            this.lableId.Name = "lableId";
-            this.lableId.Size = new System.Drawing.Size(34, 25);
-            this.lableId.TabIndex = 19;
-            this.lableId.Text = "ID:";
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(80, 233);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(106, 25);
-            this.lblID.TabIndex = 20;
-            this.lblID.Text = "PlaceHolder";
+            this.txtNomItem.Location = new System.Drawing.Point(80, 53);
+            this.txtNomItem.Name = "txtNomItem";
+            this.txtNomItem.Size = new System.Drawing.Size(203, 31);
+            this.txtNomItem.TabIndex = 13;
             // 
             // MenuForm
             // 
@@ -275,6 +275,7 @@
             this.Controls.Add(this.checkedListBox1);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
+            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.grboxManageItems.ResumeLayout(false);
             this.grboxManageItems.PerformLayout();
             this.ResumeLayout(false);

@@ -60,12 +60,12 @@ namespace Projet_4_etoiles.DataAccess.DAO
             DateTime inAHour = DateTime.Now.AddHours(1);
 
 
-            return this._context.Utilisations.Where(utilisation => ((utilisation.DateReservation.Year == now.Year) && (utilisation.DateReservation.Month == now.Month)
-            && (utilisation.DateReservation.Day == now.Day)) &&
-            (utilisation.HeureReservation.Hour == now.Hour && utilisation.HeureReservation <= inAHour);
-
+            return (List<UtilisationDTO>)this._context.Utilisations.Where(utilisation => utilisation.DateReservation.Year == now.Year
+            && (utilisation.DateReservation.Month == now.Month)
+            && (utilisation.DateReservation.Day == now.Day) &&
+           (utilisation.HeureReservation.Hour == now.Hour) && (utilisation.HeureReservation <= inAHour));
+            
         }
-
         
 
     }
