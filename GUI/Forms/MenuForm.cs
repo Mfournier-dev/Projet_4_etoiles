@@ -16,5 +16,6 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             InitializeComponent();
         }
+
     }
 }
