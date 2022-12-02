@@ -33,7 +33,7 @@ namespace Projet_4_etoiles.DataAccess.DTO
         public string? NumeroTelephone { get; set; }
 
         [Column("DateReservation")]
-        public DateTime? DateReservation { get; set; }
+        public DateTime DateReservation { get; set; }
 
         [Column("HeureReservation")]
         [Required]

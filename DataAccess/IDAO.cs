@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_4_etoiles.DataAccess.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,7 @@ namespace Projet_4_etoiles.DataAccess
         public TDTO GetById(int id);
 
         public List<TDTO> GetAll();
+
+        
     }
 }

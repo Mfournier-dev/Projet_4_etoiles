@@ -14,7 +14,7 @@ namespace Projet_4_etoiles.DataAccess.Context
 
         public DbSet<UtilisationDTO> Utilisations { get; set; }
 
-        public DbSet<TablesDTO> Tables { get; set; } // il cree un attribut quie s'apelle tables qui va conteinir un valeur 
+        public DbSet<TablesDTO> Tables { get; set; } // il cree un attribut qui s'apelle tables qui va conteinir un valeur 
 
         public DbSet<CommandeDTO> Commandes { get; set; }
         public DbSet<CommandesArticlesDTO> CommandesArticles { get; set; }
