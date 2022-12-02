@@ -33,20 +33,24 @@ namespace Projet_4_etoiles.DataAccess.DTO
         public string? NumeroTelephone { get; set; }
 
         [Column("DateReservation")]
+        [Required]
         public DateTime DateReservation { get; set; }
 
         [Column("HeureReservation")]
         [Required]
         public DateTime HeureReservation { get; set; }
 
-        //public List<TableDTO> Tables { get; set; }
+        public List<TablesDTO> Tables { get; set; }
+        public UtilisationDTO() {
+            
+        }
 
         public UtilisationDTO(int nombreClients,
                               int idTable,
                               DateTime heureReservation,
+                              DateTime dateReservation,
                               string? nomReservation = null,
-                              string? numeroTelephone = null,
-                              DateTime? dateReservation = null)
+                              string? numeroTelephone = null)
         {
             this.NombreClients = nombreClients;
             this.IdTable = idTable;
