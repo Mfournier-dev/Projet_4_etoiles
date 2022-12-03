@@ -27,9 +27,8 @@ public class MenuDTO : IDTO
     [Required]
     public int Price { get; set; }
 
-    public MenuDTO(int id, string name, string category, int price)
+    public MenuDTO(string name, string category, int price)
     {
-        Id = id;
         Name = name;
         Category = category;
         Price = price;

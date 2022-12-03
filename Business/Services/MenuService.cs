@@ -18,11 +18,19 @@ public class MenuService : IService
         this.menuDAO = new MenuDAO(appContext);
     }
 
-    public MenuDTO CreateNewItem(int id, string name, string category, int price)
+    public MenuDTO CreateNewItem( MenuDTO newItem)
     {
-        MenuDTO item = new MenuDTO(id, name, category, price);
-        this.menuDAO.Create(item);
-        return item;
+        return this.menuDAO.Create(newItem);
+    }
+
+    public MenuDTO ModifyItem(MenuDTO newItem)
+    {
+        return this.menuDAO.Update(newItem);
+    }
+
+    public MenuDTO DeleteNewItem(MenuDTO newItem)
+    {
+        return this.menuDAO.Delete(newItem);
     }
 }
 

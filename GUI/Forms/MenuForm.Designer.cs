@@ -37,16 +37,14 @@
             this.lblDessert = new System.Windows.Forms.Label();
             this.lblBreuvage = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.btnCreateItem = new System.Windows.Forms.Button();
-            this.btnModifierItem = new System.Windows.Forms.Button();
-            this.btnDeleteItem = new System.Windows.Forms.Button();
+            this.btnItems = new System.Windows.Forms.Button();
             this.grboxManageItems = new System.Windows.Forms.GroupBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lableId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
             this.lblPrix = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPrixItem = new System.Windows.Forms.TextBox();
             this.lblNomItem = new System.Windows.Forms.Label();
             this.txtNomItem = new System.Windows.Forms.TextBox();
             this.grboxManageItems.SuspendLayout();
@@ -138,38 +136,17 @@
             this.checkedListBox1.Size = new System.Drawing.Size(243, 396);
             this.checkedListBox1.TabIndex = 0;
             // 
-            // btnCreateItem
+            // btnItems
             // 
-            this.btnCreateItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCreateItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCreateItem.Location = new System.Drawing.Point(59, 277);
-            this.btnCreateItem.Name = "btnCreateItem";
-            this.btnCreateItem.Size = new System.Drawing.Size(178, 42);
-            this.btnCreateItem.TabIndex = 10;
-            this.btnCreateItem.Text = "Creer";
-            this.btnCreateItem.UseVisualStyleBackColor = true;
-            // 
-            // btnModifierItem
-            // 
-            this.btnModifierItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModifierItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnModifierItem.Location = new System.Drawing.Point(59, 325);
-            this.btnModifierItem.Name = "btnModifierItem";
-            this.btnModifierItem.Size = new System.Drawing.Size(178, 42);
-            this.btnModifierItem.TabIndex = 11;
-            this.btnModifierItem.Text = "Modifier";
-            this.btnModifierItem.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteItem
-            // 
-            this.btnDeleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDeleteItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteItem.Location = new System.Drawing.Point(59, 373);
-            this.btnDeleteItem.Name = "btnDeleteItem";
-            this.btnDeleteItem.Size = new System.Drawing.Size(178, 42);
-            this.btnDeleteItem.TabIndex = 12;
-            this.btnDeleteItem.Text = "Delete";
-            this.btnDeleteItem.UseVisualStyleBackColor = true;
+            this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnItems.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnItems.Location = new System.Drawing.Point(30, 277);
+            this.btnItems.Name = "btnItems";
+            this.btnItems.Size = new System.Drawing.Size(225, 121);
+            this.btnItems.TabIndex = 10;
+            this.btnItems.Text = "creer";
+            this.btnItems.UseVisualStyleBackColor = true;
+            this.btnItems.Click += new System.EventHandler(this.btnItems_Click);
             // 
             // grboxManageItems
             // 
@@ -178,12 +155,10 @@
             this.grboxManageItems.Controls.Add(this.label1);
             this.grboxManageItems.Controls.Add(this.comboBoxCategorie);
             this.grboxManageItems.Controls.Add(this.lblPrix);
-            this.grboxManageItems.Controls.Add(this.textBox1);
+            this.grboxManageItems.Controls.Add(this.txtPrixItem);
             this.grboxManageItems.Controls.Add(this.lblNomItem);
             this.grboxManageItems.Controls.Add(this.txtNomItem);
-            this.grboxManageItems.Controls.Add(this.btnCreateItem);
-            this.grboxManageItems.Controls.Add(this.btnDeleteItem);
-            this.grboxManageItems.Controls.Add(this.btnModifierItem);
+            this.grboxManageItems.Controls.Add(this.btnItems);
             this.grboxManageItems.Location = new System.Drawing.Point(913, 76);
             this.grboxManageItems.Name = "grboxManageItems";
             this.grboxManageItems.Size = new System.Drawing.Size(299, 429);
@@ -235,12 +210,12 @@
             this.lblPrix.TabIndex = 16;
             this.lblPrix.Text = "Prix:";
             // 
-            // textBox1
+            // txtPrixItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 31);
-            this.textBox1.TabIndex = 15;
+            this.txtPrixItem.Location = new System.Drawing.Point(80, 103);
+            this.txtPrixItem.Name = "txtPrixItem";
+            this.txtPrixItem.Size = new System.Drawing.Size(203, 31);
+            this.txtPrixItem.TabIndex = 15;
             // 
             // lblNomItem
             // 
@@ -293,12 +268,10 @@
         private Label lblDessert;
         private Label lblBreuvage;
         private CheckedListBox checkedListBox1;
-        private Button btnCreateItem;
-        private Button btnModifierItem;
-        private Button btnDeleteItem;
+        private Button btnItems;
         private GroupBox grboxManageItems;
         private Label lblPrix;
-        private TextBox textBox1;
+        private TextBox txtPrixItem;
         private Label lblNomItem;
         private TextBox txtNomItem;
         private Label lblID;
