@@ -87,6 +87,7 @@
             this.btnFermeture.TabIndex = 5;
             this.btnFermeture.Text = "Fermer La Fenetre";
             this.btnFermeture.UseVisualStyleBackColor = true;
+            this.btnFermeture.Click += new System.EventHandler(this.btnFermeture_Click);
             // 
             // lblTitre
             // 
@@ -164,7 +165,7 @@
             this.grboxManageItems.Size = new System.Drawing.Size(299, 429);
             this.grboxManageItems.TabIndex = 13;
             this.grboxManageItems.TabStop = false;
-            this.grboxManageItems.Text = "groupBox1";
+            this.grboxManageItems.Text = "groupBoxItems";
             // 
             // lblID
             // 
@@ -214,6 +215,7 @@
             // 
             this.txtPrixItem.Location = new System.Drawing.Point(80, 103);
             this.txtPrixItem.Name = "txtPrixItem";
+            this.txtPrixItem.PlaceholderText = "999.999$";
             this.txtPrixItem.Size = new System.Drawing.Size(203, 31);
             this.txtPrixItem.TabIndex = 15;
             // 
@@ -230,6 +232,7 @@
             // 
             this.txtNomItem.Location = new System.Drawing.Point(80, 53);
             this.txtNomItem.Name = "txtNomItem";
+            this.txtNomItem.PlaceholderText = "Item name";
             this.txtNomItem.Size = new System.Drawing.Size(203, 31);
             this.txtNomItem.TabIndex = 13;
             // 

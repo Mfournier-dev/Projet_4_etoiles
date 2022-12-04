@@ -60,8 +60,8 @@ namespace Projet_4_etoiles.GUI.Forms
             this.lblID.Text = "";
             this.txtNomItem.Text = null;
             this.txtPrixItem.Text = null;
-            this.comboBoxCategorie.Text = null;
-            this.btnAjouter.Text = "Create";
+            this.comboBoxCategorie.SelectedText = null;
+            this.btnItems.Text = "Create";
 
             this.ShowDialog();
             return this.workingMenu;
@@ -72,8 +72,8 @@ namespace Projet_4_etoiles.GUI.Forms
             this.lblID.Text = this.workingMenu.Id.ToString();
             this.txtNomItem.Text = this.workingMenu.Name;
             this.txtPrixItem.Text = this.workingMenu.Price.ToString();
-            this.comboBoxCategorie.Text = this.workingMenu.Category;
-            this.btnAjouter.Text = "Save Changes";
+            this.comboBoxCategorie.SelectedValue = this.workingMenu.Category;
+            this.btnItems.Text = "Save Changes";
 
             this.ShowDialog();
             return this.workingMenu;
@@ -85,8 +85,8 @@ namespace Projet_4_etoiles.GUI.Forms
             this.lblID.Text = this.workingMenu.Id.ToString();
             this.txtNomItem.Text = this.workingMenu.Name;
             this.txtPrixItem.Text = this.workingMenu.Price.ToString();
-            this.comboBoxCategorie.Text = this.workingMenu.Category;
-            this.btnAjouter.Text = "Display";
+            this.comboBoxCategorie.SelectedValue = this.workingMenu.Category;
+            this.btnItems.Text = "Display";
 
             this.ShowDialog();
             return this.workingMenu;
@@ -102,8 +102,8 @@ namespace Projet_4_etoiles.GUI.Forms
             this.lblID.Text = this.workingMenu.Id.ToString();
             this.txtNomItem.Text = this.workingMenu.Name;
             this.txtPrixItem.Text = this.workingMenu.Price.ToString();
-            this.comboBoxCategorie.Text = this.workingMenu.Category;
-            this.btnAjouter.Text = "Delete";
+            this.comboBoxCategorie.SelectedValue = this.workingMenu.Category;
+            this.btnItems.Text = "Delete";
 
             this.ShowDialog();
             return this.workingMenu;
@@ -168,6 +168,11 @@ namespace Projet_4_etoiles.GUI.Forms
                     this.CloseModalWindow();
                     break;
             }
+        }
+
+        private void btnFermeture_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
