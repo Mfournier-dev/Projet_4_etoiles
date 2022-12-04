@@ -33,4 +33,14 @@ public class MenuDTO : IDTO
         Category = category;
         Price = price;
     }
+
+    public int GetId()
+    {
+        return this.Id;
+    }
+
+    public string ToStringForListView()
+    {
+        return this.Name;
+    }
 }

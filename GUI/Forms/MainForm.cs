@@ -15,6 +15,7 @@ namespace Projet_4_etoiles
         {
             InitializeComponent();
             this.mForm = new MenuForm();
+            this.viewInt = new ViewIntent();
         }
 
         private void btnAssignation_Click(object sender, EventArgs e)

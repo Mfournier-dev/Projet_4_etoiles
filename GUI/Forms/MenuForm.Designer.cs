@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnFermeture = new System.Windows.Forms.Button();
             this.lblTitre = new System.Windows.Forms.Label();
             this.lblPlats = new System.Windows.Forms.Label();
             this.lblDessert = new System.Windows.Forms.Label();
             this.lblBreuvage = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.btnItems = new System.Windows.Forms.Button();
             this.grboxManageItems = new System.Windows.Forms.GroupBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -47,24 +44,11 @@
             this.txtPrixItem = new System.Windows.Forms.TextBox();
             this.lblNomItem = new System.Windows.Forms.Label();
             this.txtNomItem = new System.Windows.Forms.TextBox();
+            this.liPlatPrincipaux = new System.Windows.Forms.ListView();
+            this.liDesserts = new System.Windows.Forms.ListView();
+            this.liBreuvages = new System.Windows.Forms.ListView();
             this.grboxManageItems.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(320, 109);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(243, 396);
-            this.checkedListBox2.TabIndex = 1;
-            // 
-            // checkedListBox3
-            // 
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Location = new System.Drawing.Point(626, 109);
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(243, 396);
-            this.checkedListBox3.TabIndex = 2;
             // 
             // btnAjouter
             // 
@@ -128,14 +112,6 @@
             this.lblBreuvage.Size = new System.Drawing.Size(121, 30);
             this.lblBreuvage.TabIndex = 9;
             this.lblBreuvage.Text = "Breuvages";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(24, 109);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(243, 396);
-            this.checkedListBox1.TabIndex = 0;
             // 
             // btnItems
             // 
@@ -236,11 +212,38 @@
             this.txtNomItem.Size = new System.Drawing.Size(203, 31);
             this.txtNomItem.TabIndex = 13;
             // 
+            // liPlatPrincipaux
+            // 
+            this.liPlatPrincipaux.Location = new System.Drawing.Point(42, 130);
+            this.liPlatPrincipaux.Name = "liPlatPrincipaux";
+            this.liPlatPrincipaux.Size = new System.Drawing.Size(210, 375);
+            this.liPlatPrincipaux.TabIndex = 14;
+            this.liPlatPrincipaux.UseCompatibleStateImageBehavior = false;
+            // 
+            // liDesserts
+            // 
+            this.liDesserts.Location = new System.Drawing.Point(350, 129);
+            this.liDesserts.Name = "liDesserts";
+            this.liDesserts.Size = new System.Drawing.Size(210, 375);
+            this.liDesserts.TabIndex = 15;
+            this.liDesserts.UseCompatibleStateImageBehavior = false;
+            // 
+            // liBreuvages
+            // 
+            this.liBreuvages.Location = new System.Drawing.Point(655, 130);
+            this.liBreuvages.Name = "liBreuvages";
+            this.liBreuvages.Size = new System.Drawing.Size(210, 375);
+            this.liBreuvages.TabIndex = 16;
+            this.liBreuvages.UseCompatibleStateImageBehavior = false;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 625);
+            this.Controls.Add(this.liBreuvages);
+            this.Controls.Add(this.liDesserts);
+            this.Controls.Add(this.liPlatPrincipaux);
             this.Controls.Add(this.grboxManageItems);
             this.Controls.Add(this.lblBreuvage);
             this.Controls.Add(this.lblDessert);
@@ -248,9 +251,6 @@
             this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.btnFermeture);
             this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.checkedListBox3);
-            this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.checkedListBox1);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
             this.Load += new System.EventHandler(this.MenuForm_Load);
@@ -262,15 +262,12 @@
         }
 
         #endregion
-        private CheckedListBox checkedListBox2;
-        private CheckedListBox checkedListBox3;
         private Button btnAjouter;
         private Button btnFermeture;
         private Label lblTitre;
         private Label lblPlats;
         private Label lblDessert;
         private Label lblBreuvage;
-        private CheckedListBox checkedListBox1;
         private Button btnItems;
         private GroupBox grboxManageItems;
         private Label lblPrix;
@@ -281,5 +278,8 @@
         private Label lableId;
         private Label label1;
         private ComboBox comboBoxCategorie;
+        private ListView liPlatPrincipaux;
+        private ListView liDesserts;
+        private ListView liBreuvages;
     }
 }

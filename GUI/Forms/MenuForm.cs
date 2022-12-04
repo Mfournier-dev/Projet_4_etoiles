@@ -1,4 +1,5 @@
 ﻿using Projet_4_etoiles.Business.Services;
+using Projet_4_etoiles.DataAccess.Context;
 using Projet_4_etoiles.DataAccess.DTO;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,11 @@ namespace Projet_4_etoiles.GUI.Forms
     {
         private MenuDTO workingMenu;
         private ViewIntent workingIntent;
+        private ProjectContext projectContext;
         public MenuForm()
         {
             InitializeComponent();
+            this.projectContext = new ProjectContext();
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
@@ -114,9 +117,10 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             // TODO: Validation
             this.workingMenu.Name = this.txtNomItem.Text;
-            this.workingMenu.Category = this.comboBoxCategorie.SelectedValue.ToString();
+            this.workingMenu.Category = this.comboBoxCategorie.SelectedText.ToString();
             this.workingMenu.Price = int.Parse(this.txtPrixItem.Text);
             MainService.GetInstance().GetMenuService().CreateNewItem(this.workingMenu);
+            //projectContext.Menu.Add(this.workingMenu);
 
             this.DialogResult = DialogResult.OK;
         }
@@ -125,7 +129,7 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             // TODO: Validation
             this.workingMenu.Name = this.txtNomItem.Text;
-            this.workingMenu.Category = this.comboBoxCategorie.SelectedValue.ToString();
+            this.workingMenu.Category = this.comboBoxCategorie.SelectedText.ToString();
             this.workingMenu.Price = int.Parse(this.txtPrixItem.Text);
             MainService.GetInstance().GetMenuService().ModifyItem(this.workingMenu);
             this.DialogResult = DialogResult.OK;
@@ -135,7 +139,7 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             // TODO: Validation
             this.workingMenu.Name = this.txtNomItem.Text;
-            this.workingMenu.Category = this.comboBoxCategorie.SelectedValue.ToString();
+            this.workingMenu.Category = this.comboBoxCategorie.SelectedText.ToString();
             this.workingMenu.Price = int.Parse(this.txtPrixItem.Text);
             MainService.GetInstance().GetMenuService().DeleteNewItem(this.workingMenu);
             this.DialogResult = DialogResult.OK;
@@ -174,5 +178,7 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.DialogResult = DialogResult.OK;
         }
+
+       
     }
 }
