@@ -13,18 +13,11 @@ namespace Projet_4_etoiles.DataAccess.DAO;
 public class TablesDAO : IDAO<TablesDTO>
 
 	// CREATION D'OBJET = Minuscule 
-	// FUNCTION - METHODE = Majuscule 
+	// FONCTION - METHODE = Majuscule 
 
 
 {
 	private ProjectContext context; // Creant l'attribut context (je vais l'initialiser dans le constructeur)
-
-
-
-	// Liste Tables
-    string[] tablesId = { "Table 01", "Table 02", "Table 03", "Table 04", "Table 05", "Table 06", "Table 07", "Table 08", "Table 09", "Table 10", "Table 11", "Table 12", "Table 13", "Table 14", "Table 15", "Table 16", "Table 17", "Table 18", "Table 19", "Table 20" };
-    // Liste Statut
-    string[] statutTables = { " Reservé", " Disponiblé" };
 
     public TablesDAO(ProjectContext? context = null) // Constructeur Generique (Il peut recevoir ou non un context)
 	{
@@ -46,35 +39,31 @@ public class TablesDAO : IDAO<TablesDTO>
 		return this.context.Tables.Where(tables => tables.IdTable== id).Single();   // Lambda??
 	}
 
-	///*************************** MODIFIER APRES LA FORME
-    /*
-	public void GetbyStatut(String Statut)
+	public TablesDTO CreateTable (TablesDTO newTable)
+	{
+		this.context.Tables.Add(newTable);
+		this.context.SaveChanges();
+		return newTable;
+
+	}
+
+
+    public TablesDTO DeleteTable(TablesDTO tableDelete)
     {
-		(DbSet<UtilisationDTO>).Where
+        this.context.Tables.Remove(tableDelete);
+        this.context.SaveChanges();
+        return tableDelete;
 
-
-
-
-		
-		string[] tablesId = { };
-		List<TablesDTO> StatusTable = new List<TablesDTO>();
-
-        foreach (TablesDTO table in GetAll())
-		{
-            	if (table.Statut == Statut){
-				tablesId.Add(table);
-				return tablesId;
-
-	
-            //	adjuntar.StatusTable
-            //	return RelatedImageListAttribute table que cumplen con la funcion en el parametro
-
-
-
-
-        }
-        //}   // Lambda??
     }
-	*/
+
+    public TablesDTO UpdateTable(TablesDTO updateTable)
+    {
+        this.context.Tables.Update(updateTable);
+        this.context.SaveChanges();
+        return updateTable;
+
+    }
+
+
 
 }
