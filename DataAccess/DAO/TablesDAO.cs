@@ -17,32 +17,32 @@ public class TablesDAO : IDAO<TablesDTO>
 
 
 {
-	private ProjectContext context; // Creant l'attribut context (je vais l'initialiser dans le constructeur)
+	private ProjectContext _context; // Creant l'attribut _context (je vais l'initialiser dans le constructeur)
 
-    public TablesDAO(ProjectContext? context = null) // Constructeur Generique (Il peut recevoir ou non un context)
+    public TablesDAO(ProjectContext? context = null) // Constructeur Generique (Il peut recevoir ou non un _context)
 	{
 		if (context is null)
 		{
 			context = new ProjectContext();
 		}
-		this.context = context;
+		this._context = context;
 		
 	}
 
 	public List<TablesDTO> GetAll()
 	{
-		return this.context.Tables.ToList();
+		return this._context.Tables.ToList();
 	} 
 
 	public TablesDTO GetById(int id)
 	{
-		return this.context.Tables.Where(tables => tables.IdTable== id).Single();   // Lambda??
+		return this._context.Tables.Where(tables => tables.IdTable== id).Single();   // Lambda??
 	}
 
 	public TablesDTO CreateTable (TablesDTO newTable)
 	{
-		this.context.Tables.Add(newTable);
-		this.context.SaveChanges();
+		this._context.Tables.Add(newTable);
+		this._context.SaveChanges();
 		return newTable;
 
 	}
@@ -50,16 +50,16 @@ public class TablesDAO : IDAO<TablesDTO>
 
     public TablesDTO DeleteTable(TablesDTO tableDelete)
     {
-        this.context.Tables.Remove(tableDelete);
-        this.context.SaveChanges();
+        this._context.Tables.Remove(tableDelete);
+        this._context.SaveChanges();
         return tableDelete;
 
     }
 
     public TablesDTO UpdateTable(TablesDTO updateTable)
     {
-        this.context.Tables.Update(updateTable);
-        this.context.SaveChanges();
+        this._context.Tables.Update(updateTable);
+        this._context.SaveChanges();
         return updateTable;
 
     }
