@@ -13,7 +13,7 @@ namespace Projet_4_etoiles.Business.Services
     public class MainService : IService
     {
         //Ajouter tous les classes services dans le projet.
-        //private UtilisationForm utilisationForm;
+        private UtilisationForm utilisationForm;
         private ProjectContext _projectContext;
         private CommandeService _commandeService;
         private UtilisationService _utilisationService;
@@ -53,10 +53,10 @@ namespace Projet_4_etoiles.Business.Services
             Application.Exit();
         }
 
-        //public void OpenCoursesWindow() //11.2
-        //{
-        //    this.UtilisationForm.ShowDialog(); //11.3
-        //}
+        public void OpenUtilisationForm()
+        {
+            this.utilisationForm.ShowDialog();
+        }
 
 
         //Chaque Service doit avoir une methode similaire comme celle ci-dessous.

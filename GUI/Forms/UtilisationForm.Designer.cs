@@ -29,13 +29,8 @@
         private void InitializeComponent()
         {
             this.LblTablesUsed = new System.Windows.Forms.Label();
-            this.lstTablesUsed = new System.Windows.Forms.ListBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblDisplayId = new System.Windows.Forms.Label();
-            this.grpChoice = new System.Windows.Forms.GroupBox();
-            this.rbAssignation = new System.Windows.Forms.RadioButton();
-            this.rbReservation = new System.Windows.Forms.RadioButton();
-            this.lblAssignation = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblId_utilisation = new System.Windows.Forms.Label();
             this.txtNoTelephone = new System.Windows.Forms.TextBox();
@@ -49,39 +44,29 @@
             this.lblNombrePersonnes = new System.Windows.Forms.Label();
             this.cbReservationHour = new System.Windows.Forms.ComboBox();
             this.txtNomReservation = new System.Windows.Forms.TextBox();
-            this.calReservationDate = new System.Windows.Forms.MonthCalendar();
             this.lblReservationHour = new System.Windows.Forms.Label();
             this.lblReservationDate = new System.Windows.Forms.Label();
             this.lblNomReservation = new System.Windows.Forms.Label();
-            this.LblReservation = new System.Windows.Forms.Label();
-            this.grpChoice.SuspendLayout();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpDateReservation = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // LblTablesUsed
             // 
             this.LblTablesUsed.AutoSize = true;
             this.LblTablesUsed.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblTablesUsed.Location = new System.Drawing.Point(610, 84);
+            this.LblTablesUsed.Location = new System.Drawing.Point(474, 110);
             this.LblTablesUsed.Name = "LblTablesUsed";
-            this.LblTablesUsed.Size = new System.Drawing.Size(162, 20);
+            this.LblTablesUsed.Size = new System.Drawing.Size(163, 20);
             this.LblTablesUsed.TabIndex = 53;
-            this.LblTablesUsed.Text = "Tables en utilisation";
-            // 
-            // lstTablesUsed
-            // 
-            this.lstTablesUsed.FormattingEnabled = true;
-            this.lstTablesUsed.ItemHeight = 15;
-            this.lstTablesUsed.Location = new System.Drawing.Point(583, 107);
-            this.lstTablesUsed.Name = "lstTablesUsed";
-            this.lstTablesUsed.Size = new System.Drawing.Size(216, 154);
-            this.lstTablesUsed.TabIndex = 52;
+            this.LblTablesUsed.Text = "Liste des utilisations";
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(583, 441);
+            this.btnSave.Location = new System.Drawing.Point(582, 260);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(216, 52);
+            this.btnSave.Size = new System.Drawing.Size(117, 33);
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Sauvegarder";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -90,51 +75,10 @@
             // 
             this.lblDisplayId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDisplayId.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDisplayId.Location = new System.Drawing.Point(229, 137);
+            this.lblDisplayId.Location = new System.Drawing.Point(220, 110);
             this.lblDisplayId.Name = "lblDisplayId";
             this.lblDisplayId.Size = new System.Drawing.Size(226, 32);
             this.lblDisplayId.TabIndex = 50;
-            // 
-            // grpChoice
-            // 
-            this.grpChoice.Controls.Add(this.rbAssignation);
-            this.grpChoice.Controls.Add(this.rbReservation);
-            this.grpChoice.Location = new System.Drawing.Point(229, 93);
-            this.grpChoice.Name = "grpChoice";
-            this.grpChoice.Size = new System.Drawing.Size(226, 41);
-            this.grpChoice.TabIndex = 49;
-            this.grpChoice.TabStop = false;
-            // 
-            // rbAssignation
-            // 
-            this.rbAssignation.AutoSize = true;
-            this.rbAssignation.Location = new System.Drawing.Point(206, 19);
-            this.rbAssignation.Name = "rbAssignation";
-            this.rbAssignation.Size = new System.Drawing.Size(14, 13);
-            this.rbAssignation.TabIndex = 1;
-            this.rbAssignation.TabStop = true;
-            this.rbAssignation.UseVisualStyleBackColor = true;
-            // 
-            // rbReservation
-            // 
-            this.rbReservation.AutoSize = true;
-            this.rbReservation.Location = new System.Drawing.Point(6, 19);
-            this.rbReservation.Name = "rbReservation";
-            this.rbReservation.Size = new System.Drawing.Size(14, 13);
-            this.rbReservation.TabIndex = 0;
-            this.rbReservation.TabStop = true;
-            this.rbReservation.UseVisualStyleBackColor = true;
-            // 
-            // lblAssignation
-            // 
-            this.lblAssignation.AutoSize = true;
-            this.lblAssignation.Font = new System.Drawing.Font("Segoe UI Emoji", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAssignation.ForeColor = System.Drawing.Color.Red;
-            this.lblAssignation.Location = new System.Drawing.Point(384, 62);
-            this.lblAssignation.Name = "lblAssignation";
-            this.lblAssignation.Size = new System.Drawing.Size(131, 28);
-            this.lblAssignation.TabIndex = 48;
-            this.lblAssignation.Text = "Assignation";
             // 
             // lblTitle
             // 
@@ -142,16 +86,16 @@
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Emoji", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.Location = new System.Drawing.Point(328, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(225, 28);
+            this.lblTitle.Size = new System.Drawing.Size(292, 28);
             this.lblTitle.TabIndex = 47;
-            this.lblTitle.Text = "Utilisation des tables";
+            this.lblTitle.Text = "Assignation && Réservations";
             // 
             // lblId_utilisation
             // 
             this.lblId_utilisation.AutoSize = true;
             this.lblId_utilisation.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblId_utilisation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblId_utilisation.Location = new System.Drawing.Point(107, 149);
+            this.lblId_utilisation.ForeColor = System.Drawing.Color.Black;
+            this.lblId_utilisation.Location = new System.Drawing.Point(99, 111);
             this.lblId_utilisation.Name = "lblId_utilisation";
             this.lblId_utilisation.Size = new System.Drawing.Size(109, 20);
             this.lblId_utilisation.TabIndex = 46;
@@ -160,7 +104,7 @@
             // txtNoTelephone
             // 
             this.txtNoTelephone.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNoTelephone.Location = new System.Drawing.Point(229, 289);
+            this.txtNoTelephone.Location = new System.Drawing.Point(221, 251);
             this.txtNoTelephone.Name = "txtNoTelephone";
             this.txtNoTelephone.Size = new System.Drawing.Size(226, 27);
             this.txtNoTelephone.TabIndex = 45;
@@ -169,8 +113,8 @@
             // 
             this.lblNoTelephone.AutoSize = true;
             this.lblNoTelephone.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNoTelephone.ForeColor = System.Drawing.Color.Red;
-            this.lblNoTelephone.Location = new System.Drawing.Point(42, 292);
+            this.lblNoTelephone.ForeColor = System.Drawing.Color.Black;
+            this.lblNoTelephone.Location = new System.Drawing.Point(34, 254);
             this.lblNoTelephone.Name = "lblNoTelephone";
             this.lblNoTelephone.Size = new System.Drawing.Size(174, 20);
             this.lblNoTelephone.TabIndex = 44;
@@ -179,9 +123,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnUpdate.Location = new System.Drawing.Point(583, 325);
+            this.btnUpdate.Location = new System.Drawing.Point(642, 221);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(216, 52);
+            this.btnUpdate.Size = new System.Drawing.Size(117, 33);
             this.btnUpdate.TabIndex = 43;
             this.btnUpdate.Text = "Modifier";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -189,19 +133,19 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(583, 383);
+            this.btnAdd.Location = new System.Drawing.Point(516, 221);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(216, 52);
+            this.btnAdd.Size = new System.Drawing.Size(120, 33);
             this.btnAdd.TabIndex = 42;
-            this.btnAdd.Text = "Ajouter";
+            this.btnAdd.Text = "Créer";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(583, 267);
+            this.btnDelete.Location = new System.Drawing.Point(765, 221);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(216, 52);
+            this.btnDelete.Size = new System.Drawing.Size(120, 33);
             this.btnDelete.TabIndex = 41;
             this.btnDelete.Text = "Supprimer";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -221,7 +165,7 @@
             "8",
             "9",
             "10"});
-            this.cbNoTable.Location = new System.Drawing.Point(308, 222);
+            this.cbNoTable.Location = new System.Drawing.Point(300, 184);
             this.cbNoTable.Name = "cbNoTable";
             this.cbNoTable.Size = new System.Drawing.Size(66, 28);
             this.cbNoTable.TabIndex = 40;
@@ -230,7 +174,7 @@
             // 
             this.lblNoTable.AutoSize = true;
             this.lblNoTable.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNoTable.Location = new System.Drawing.Point(80, 225);
+            this.lblNoTable.Location = new System.Drawing.Point(72, 187);
             this.lblNoTable.Name = "lblNoTable";
             this.lblNoTable.Size = new System.Drawing.Size(137, 20);
             this.lblNoTable.TabIndex = 39;
@@ -239,7 +183,7 @@
             // txtNombrePersonnes
             // 
             this.txtNombrePersonnes.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombrePersonnes.Location = new System.Drawing.Point(229, 189);
+            this.txtNombrePersonnes.Location = new System.Drawing.Point(221, 151);
             this.txtNombrePersonnes.Name = "txtNombrePersonnes";
             this.txtNombrePersonnes.Size = new System.Drawing.Size(227, 27);
             this.txtNombrePersonnes.TabIndex = 38;
@@ -248,7 +192,7 @@
             // 
             this.lblNombrePersonnes.AutoSize = true;
             this.lblNombrePersonnes.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombrePersonnes.Location = new System.Drawing.Point(42, 192);
+            this.lblNombrePersonnes.Location = new System.Drawing.Point(34, 154);
             this.lblNombrePersonnes.Name = "lblNombrePersonnes";
             this.lblNombrePersonnes.Size = new System.Drawing.Size(175, 20);
             this.lblNombrePersonnes.TabIndex = 37;
@@ -276,31 +220,25 @@
             "19:00",
             "19:30",
             "20:00"});
-            this.cbReservationHour.Location = new System.Drawing.Point(229, 503);
+            this.cbReservationHour.Location = new System.Drawing.Point(220, 332);
             this.cbReservationHour.Name = "cbReservationHour";
-            this.cbReservationHour.Size = new System.Drawing.Size(221, 28);
+            this.cbReservationHour.Size = new System.Drawing.Size(226, 28);
             this.cbReservationHour.TabIndex = 36;
             // 
             // txtNomReservation
             // 
             this.txtNomReservation.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNomReservation.Location = new System.Drawing.Point(228, 256);
+            this.txtNomReservation.Location = new System.Drawing.Point(220, 218);
             this.txtNomReservation.Name = "txtNomReservation";
             this.txtNomReservation.Size = new System.Drawing.Size(227, 27);
             this.txtNomReservation.TabIndex = 35;
-            // 
-            // calReservationDate
-            // 
-            this.calReservationDate.Location = new System.Drawing.Point(229, 328);
-            this.calReservationDate.Name = "calReservationDate";
-            this.calReservationDate.TabIndex = 34;
             // 
             // lblReservationHour
             // 
             this.lblReservationHour.AutoSize = true;
             this.lblReservationHour.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblReservationHour.ForeColor = System.Drawing.Color.Red;
-            this.lblReservationHour.Location = new System.Drawing.Point(30, 506);
+            this.lblReservationHour.ForeColor = System.Drawing.Color.Black;
+            this.lblReservationHour.Location = new System.Drawing.Point(21, 335);
             this.lblReservationHour.Name = "lblReservationHour";
             this.lblReservationHour.Size = new System.Drawing.Size(186, 20);
             this.lblReservationHour.TabIndex = 33;
@@ -310,8 +248,8 @@
             // 
             this.lblReservationDate.AutoSize = true;
             this.lblReservationDate.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblReservationDate.ForeColor = System.Drawing.Color.Red;
-            this.lblReservationDate.Location = new System.Drawing.Point(39, 328);
+            this.lblReservationDate.ForeColor = System.Drawing.Color.Black;
+            this.lblReservationDate.Location = new System.Drawing.Point(31, 290);
             this.lblReservationDate.Name = "lblReservationDate";
             this.lblReservationDate.Size = new System.Drawing.Size(177, 20);
             this.lblReservationDate.TabIndex = 32;
@@ -321,34 +259,38 @@
             // 
             this.lblNomReservation.AutoSize = true;
             this.lblNomReservation.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNomReservation.ForeColor = System.Drawing.Color.Red;
-            this.lblNomReservation.Location = new System.Drawing.Point(36, 259);
+            this.lblNomReservation.ForeColor = System.Drawing.Color.Black;
+            this.lblNomReservation.Location = new System.Drawing.Point(28, 221);
             this.lblNomReservation.Name = "lblNomReservation";
             this.lblNomReservation.Size = new System.Drawing.Size(180, 20);
             this.lblNomReservation.TabIndex = 31;
             this.lblNomReservation.Text = "Nom sur la réservation";
             // 
-            // LblReservation
+            // comboBox1
             // 
-            this.LblReservation.AutoSize = true;
-            this.LblReservation.Font = new System.Drawing.Font("Segoe UI Emoji", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblReservation.Location = new System.Drawing.Point(168, 62);
-            this.LblReservation.Name = "LblReservation";
-            this.LblReservation.Size = new System.Drawing.Size(131, 28);
-            this.LblReservation.TabIndex = 30;
-            this.LblReservation.Text = "Réservation";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(642, 110);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(276, 23);
+            this.comboBox1.TabIndex = 54;
+            // 
+            // dtpDateReservation
+            // 
+            this.dtpDateReservation.Location = new System.Drawing.Point(221, 290);
+            this.dtpDateReservation.Name = "dtpDateReservation";
+            this.dtpDateReservation.Size = new System.Drawing.Size(227, 23);
+            this.dtpDateReservation.TabIndex = 55;
             // 
             // UtilisationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 564);
+            this.ClientSize = new System.Drawing.Size(956, 413);
+            this.Controls.Add(this.dtpDateReservation);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.LblTablesUsed);
-            this.Controls.Add(this.lstTablesUsed);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblDisplayId);
-            this.Controls.Add(this.grpChoice);
-            this.Controls.Add(this.lblAssignation);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblId_utilisation);
             this.Controls.Add(this.txtNoTelephone);
@@ -362,15 +304,11 @@
             this.Controls.Add(this.lblNombrePersonnes);
             this.Controls.Add(this.cbReservationHour);
             this.Controls.Add(this.txtNomReservation);
-            this.Controls.Add(this.calReservationDate);
             this.Controls.Add(this.lblReservationHour);
             this.Controls.Add(this.lblReservationDate);
             this.Controls.Add(this.lblNomReservation);
-            this.Controls.Add(this.LblReservation);
             this.Name = "UtilisationForm";
             this.Text = "UtilisationForm";
-            this.grpChoice.ResumeLayout(false);
-            this.grpChoice.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,13 +317,8 @@
         #endregion
 
         private Label LblTablesUsed;
-        private ListBox lstTablesUsed;
         private Button btnSave;
         private Label lblDisplayId;
-        private GroupBox grpChoice;
-        private RadioButton rbAssignation;
-        private RadioButton rbReservation;
-        private Label lblAssignation;
         private Label lblTitle;
         private Label lblId_utilisation;
         private TextBox txtNoTelephone;
@@ -399,10 +332,10 @@
         private Label lblNombrePersonnes;
         private ComboBox cbReservationHour;
         private TextBox txtNomReservation;
-        private MonthCalendar calReservationDate;
         private Label lblReservationHour;
         private Label lblReservationDate;
         private Label lblNomReservation;
-        private Label LblReservation;
+        private ComboBox comboBox1;
+        private DateTimePicker dtpDateReservation;
     }
 }
