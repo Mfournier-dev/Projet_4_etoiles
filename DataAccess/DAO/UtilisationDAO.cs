@@ -21,7 +21,7 @@ namespace Projet_4_etoiles.DataAccess.DAO
             this._context = context;
         }
 
-        List<UtilisationDTO> IDAO<UtilisationDTO>.GetAll()
+        public List<UtilisationDTO> GetAll()
         {
             return this._context.Utilisations.ToList();
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Projet_4_etoiles.DataAccess.DTO
 {
-    [Table("Utilisation")]
+    [Table("T_Utilisation")]
     public class UtilisationDTO : IDTO
     {
         [Column("IdUtilisation")]
@@ -28,7 +28,7 @@ namespace Projet_4_etoiles.DataAccess.DTO
         [StringLength(64)]
         public string? NomReservation { get; set; }
 
-        [Column("NomTelephone")]
+        [Column("NumeroTelephone")]
         [StringLength(16)]
         public string? NumeroTelephone { get; set; }
 
@@ -55,9 +55,10 @@ namespace Projet_4_etoiles.DataAccess.DTO
             this.NombreClients = nombreClients;
             this.IdTable = idTable;
             this.HeureReservation = heureReservation;
+            this.DateReservation = dateReservation;
             this.NomReservation = nomReservation;
             this.NumeroTelephone = numeroTelephone;
-            this.DateReservation = dateReservation;
+
 
         }
     }

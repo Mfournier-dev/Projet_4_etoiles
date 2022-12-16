@@ -47,7 +47,7 @@
             this.lblReservationHour = new System.Windows.Forms.Label();
             this.lblReservationDate = new System.Windows.Forms.Label();
             this.lblNomReservation = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbUtilisationList = new System.Windows.Forms.ComboBox();
             this.dtpDateReservation = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -266,13 +266,14 @@
             this.lblNomReservation.TabIndex = 31;
             this.lblNomReservation.Text = "Nom sur la réservation";
             // 
-            // comboBox1
+            // cbUtilisationList
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(642, 110);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 23);
-            this.comboBox1.TabIndex = 54;
+            this.cbUtilisationList.FormattingEnabled = true;
+            this.cbUtilisationList.Location = new System.Drawing.Point(642, 110);
+            this.cbUtilisationList.Name = "cbUtilisationList";
+            this.cbUtilisationList.Size = new System.Drawing.Size(276, 23);
+            this.cbUtilisationList.TabIndex = 54;
+            this.cbUtilisationList.SelectedIndexChanged += new System.EventHandler(this.cbUtilisationList_SelectedIndexChanged);
             // 
             // dtpDateReservation
             // 
@@ -287,7 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 413);
             this.Controls.Add(this.dtpDateReservation);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbUtilisationList);
             this.Controls.Add(this.LblTablesUsed);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblDisplayId);
@@ -335,7 +336,7 @@
         private Label lblReservationHour;
         private Label lblReservationDate;
         private Label lblNomReservation;
-        private ComboBox comboBox1;
+        private ComboBox cbUtilisationList;
         private DateTimePicker dtpDateReservation;
     }
 }

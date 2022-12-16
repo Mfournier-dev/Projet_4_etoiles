@@ -14,8 +14,6 @@ namespace Projet_4_etoiles.DataAccess.DTO
     {
         [Column("IdCommande")]
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-
         public int IdCommande { get; set; }
 
         [Column("IdTable")]
@@ -33,6 +31,7 @@ namespace Projet_4_etoiles.DataAccess.DTO
 
         public List<MenuDTO>? ArticlesCommandes { get; set; }
         
+
         
         /// <summary>
         /// Crée par Karine // A retravailler, quels parametres sont obligatoires pour creer la commande.
@@ -45,7 +44,9 @@ namespace Projet_4_etoiles.DataAccess.DTO
         {
             this.NombreClients = nombreClients;
             this.ArticlesCommandes = articlesCommandes;
-            this.NombreArticles = articlesCommandes.Count;
+            this.NombreArticles = nombreArticles;
         }
+
+        public CommandeDTO() { }
     }
 }

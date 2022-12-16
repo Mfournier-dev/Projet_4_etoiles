@@ -13,7 +13,6 @@ namespace Projet_4_etoiles.DataAccess.DTO
     {
         [Column("IdCA")]
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 
         public int IdCA { get; set; }
 

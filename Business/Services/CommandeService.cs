@@ -18,10 +18,10 @@ namespace Projet_4_etoiles.Business.Services
             this.commandeDAO = new CommandeDAO(appContext);
         }
 
-        // constructeur prend les parametres obligatoires, les memes que le DTO.
-        public CommandeDTO CreateCommande(int nombreClients, List<MenuDTO> articlesCommandes, int nombreArticles)
+// constructeur prend les parametres obligatoires, les memes que le DTO.
+        public CommandeDTO CreateCommande(int nombreClients, List<MenuDTO> articlesCommandes)
         {
-            CommandeDTO commande = new CommandeDTO(nombreClients,articlesCommandes,nombreArticles);
+            CommandeDTO commande = new CommandeDTO(nombreClients, articlesCommandes, articlesCommandes.Count());
             this.commandeDAO.Create(commande);
             return commande;
         }

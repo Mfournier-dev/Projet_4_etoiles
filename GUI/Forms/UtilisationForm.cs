@@ -17,12 +17,21 @@ namespace Projet_4_etoiles
     public partial class UtilisationForm : Form
     {
 
-        private UtilisationDTO workingUtilisation;
+        private UtilisationDTO? currentSelectedUtilisation;
         private ProjectContext projectContext;
         public UtilisationForm()
         {
             InitializeComponent();
             this.projectContext = new ProjectContext();
+            Init();
+        }
+
+        private void Init() {
+
+            this.cbUtilisationList.DisplayMember = "NomReservation";
+            this.cbUtilisationList.ValueMember = "IdUtilisation";
+            this.LoadUtilisationSelector(MainService.GetInstance().GetUtilisationService().GetAllUtilisations());
+
         }
 
         public void OpenWindow()
@@ -35,6 +44,35 @@ namespace Projet_4_etoiles
             this.cbReservationHour.SelectedIndex = 0;
             this.DialogResult = DialogResult.None;
             this.ShowDialog();
+        }
+
+        private void cbUtilisationList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.currentSelectedUtilisation = (UtilisationDTO)this.cbUtilisationList.Items[this.cbUtilisationList.SelectedIndex];
+            this.LoadDetailsFields(this.currentSelectedUtilisation);
+        }
+
+        private void LoadDetailsFields(UtilisationDTO utilisation)
+        {
+            this.lblDisplayId.Text = utilisation.IdUtilisation.ToString();
+            this.txtNombrePersonnes.Text = utilisation.NombreClients.ToString();
+            this.cbNoTable.Text = utilisation.IdTable.ToString();
+            this.txtNomReservation.Text = utilisation.NomReservation;
+            this.txtNoTelephone.Text = utilisation.NumeroTelephone;
+            this.dtpDateReservation.Value = utilisation.DateReservation;
+            this.cbReservationHour.Text = utilisation.HeureReservation.ToString();
+
+        }
+
+
+        private void LoadUtilisationSelector(List<UtilisationDTO> utilisations)
+        {
+            this.cbUtilisationList.Items.Clear();
+            foreach (UtilisationDTO utilisation in utilisations)
+            {
+                this.cbUtilisationList.Items.Add(utilisation);
+            }
+
         }
 
     }

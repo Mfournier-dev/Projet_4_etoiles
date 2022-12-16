@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Projet_4_etoiles.DataAccess.DTO;
 
-[Table("T_Table")]   // nom de la Table en DB
+[Table("T_Tables")]   // nom de la Table en DB
 public class TablesDTO : IDTO 
 {
     [Column("IdTable")]
