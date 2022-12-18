@@ -76,7 +76,7 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void listViewCommande_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.currentSelectedCommande = (CommandeDTO)this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
+            this.currentSelectedCommande = (CommandeDTO) this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
             this.LoadCommandeFields(this.currentSelectedCommande);
         }
 

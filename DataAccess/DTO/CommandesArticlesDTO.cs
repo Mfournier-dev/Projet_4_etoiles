@@ -6,45 +6,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projet_4_etoiles.DataAccess.DTO
+namespace Projet_4_etoiles.DataAccess.DTO;
+
+[Table("T_CommandesArticles")]   
+public class CommandesArticlesDTO : IDTO
 {
-    [Table("T_CommandesArticles")]   
-    public class CommandesArticlesDTO : IDTO
+    [Key]
+    [Column("IdCA")]
+    public int IdCA { get; set; }
+
+    [Required]
+    [Column("IdArticle")]
+   
+    public int IdArticle { get; set; }
+
+    [Required]
+    [Column("IdCommande")]    
+    public int IdCommande { get; set; }
+
+    [Required]
+    [Column("Quantite")]       
+    public int Quantite { get; set; }
+
+    [ForeignKey("IdArticle")]
+    public MenuDTO Article { get; set; }
+
+    [ForeignKey("IdCommande")]
+    public CommandeDTO Commande { get; set; }
+
+    public CommandesArticlesDTO() 
+    { 
+    
+    }
+    public CommandesArticlesDTO(int articleId, int commandeId) 
     {
-        [Key]
-        [Column("IdCA")]
-        public int IdCA { get; set; }
-        [Required]
-        [Column("IdArticle")]
-        
-
-        public int IdArticle { get; set; }
-        [Required]
-        [Column("IdCommande")]
-        
-
-        public int IdCommande { get; set; }
-        [Required]
-        [Column("Quantite")]
-        
-        public int Quantite { get; set; }
-
-        [ForeignKey("IdArticle")]
-        public MenuDTO Article { get; set; }
-
-        [ForeignKey("IdCommande")]
-        public CommandeDTO Commande { get; set; }
-
-        public CommandesArticlesDTO() 
-        { 
-        
-        }
-        public CommandesArticlesDTO(int articleId, int commandeId) 
-        {
-            this.IdArticle = articleId;
-            this.IdCommande = commandeId;
-            
-           
-        }
+        this.IdArticle = articleId;
+        this.IdCommande = commandeId;
+                  
     }
 }

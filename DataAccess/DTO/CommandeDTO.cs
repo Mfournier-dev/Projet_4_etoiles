@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 namespace Projet_4_etoiles.DataAccess.DTO;
 
 [Table("T_Commandes")]
-
 public class CommandeDTO : IDTO
 {
-    [Key]
     [Column("IdCommande")]
+    [Key]
     public int IdCommande { get; set; }
     
     [Required]
@@ -21,9 +20,7 @@ public class CommandeDTO : IDTO
     public int IdTable { get; set; }
 
     [Required]
-    [Column("NombreClients")]
-    
-    
+    [Column("NombreClients")]   
     public int NombreClients { get; set; }
 
     [Column("NombreArticles")]

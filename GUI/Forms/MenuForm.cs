@@ -29,7 +29,7 @@ namespace Projet_4_etoiles.GUI.Forms
         private void Init()
         {
             this.comboBoxCommandeId.DisplayMember = "idCommande";
-            this.comboBoxCommandeId.ValueMember = "Id";
+            this.comboBoxCommandeId.ValueMember = "IdCommande";
             //this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().get);
         }
 
