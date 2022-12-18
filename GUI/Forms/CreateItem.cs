@@ -19,13 +19,6 @@ namespace Projet_4_etoiles.GUI.Forms
         public CreateItem()
         {
             InitializeComponent();
-            this.Init();
-        }
-
-        private void Init()
-        {
-            this.comboBoxCategorie.DisplayMember = "Title";
-            this.comboBoxCategorie.ValueMember = "Category";
         }
         private void CreateItem_Load(object sender, EventArgs e)
         {
@@ -35,8 +28,7 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.txtNomItem.Text = null;
             this.txtPrixItem.Text = null;
-            string categorie1 = "Plats principaux";
-            comboBoxCategorie.Items.Add(categorie1);
+            comboBoxCategorie.Items.Add("Plats principaux");
             comboBoxCategorie.Items.Add("Desserts");
             comboBoxCategorie.Items.Add("Breuvages");
             this.DialogResult = DialogResult.None;
@@ -51,20 +43,12 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.createdItem = MainService.GetInstance().GetMenuService().CreateNewItem(
                 this.txtNomItem.Text,
-                this.comboBoxCategorie.SelectedIndex.ToString(),
+                this.comboBoxCategorie.Text,
                 Convert.ToDecimal(this.txtPrixItem.Text)
                 );
 
             this.DialogResult = DialogResult.OK;
         }
 
-        private void LoadCategorySelector(List<MenuDTO> categories)
-        {
-            this.comboBoxCategorie.Items.Clear();
-            foreach (MenuDTO categorie in categories)
-            {
-                this.comboBoxCategorie.Items.Add(categorie);
-            }
-        }
     }
 }

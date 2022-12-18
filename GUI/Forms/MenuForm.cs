@@ -37,22 +37,21 @@ namespace Projet_4_etoiles.GUI.Forms
         private void AddItemToListView(MenuDTO item)
         {
             ListViewItem lvItem = new(item.Name);
-            lvItem.Tag = item.Id;
+            lvItem.Tag = item.Category;
 
-            if (item.Category == "Plat principaux")
+            if (item.Category == "Plats principaux")
             {
                 this.liPlatPrincipaux.Items.Add(lvItem);
             }
-            else if (item.Category == "Desserts")
+            if (item.Category == "Desserts")
             {
                 this.liDesserts.Items.Add(lvItem);
             }
-            else if (item.Category == "Breuvages")
+            if (item.Category == "Breuvages")
             {
                 this.liBreuvages.Items.Add(lvItem);
             }
-            else { MessageBox.Show("Aucune categorie a ete choisi."); }
-
+            
         }
 
         private void RemoveItemFromListView(MenuDTO item)
@@ -92,7 +91,7 @@ namespace Projet_4_etoiles.GUI.Forms
             {
                 MenuDTO createdItem = this.createNewItem.GetCreatedItem();
 
-                if (createdItem.Category == "Plat principaux")
+                if (createdItem.Category == "Plats principaux")
                 {
                     this.liPlatPrincipaux.Items.Add(createdItem.Name);
                 }
@@ -133,6 +132,11 @@ namespace Projet_4_etoiles.GUI.Forms
             this.liPlatPrincipaux.Items.Clear();
             this.liDesserts.Items.Clear();
             this.liBreuvages.Items.Clear();
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void OpenMenuForm()

@@ -53,6 +53,7 @@
             this.btnAjouter.TabIndex = 4;
             this.btnAjouter.Text = "Ajouter A La Commande";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnFermeture
             // 
@@ -113,6 +114,7 @@
             this.liPlatPrincipaux.Size = new System.Drawing.Size(210, 375);
             this.liPlatPrincipaux.TabIndex = 14;
             this.liPlatPrincipaux.UseCompatibleStateImageBehavior = false;
+            this.liPlatPrincipaux.View = System.Windows.Forms.View.List;
             // 
             // liDesserts
             // 
@@ -121,6 +123,7 @@
             this.liDesserts.Size = new System.Drawing.Size(210, 375);
             this.liDesserts.TabIndex = 15;
             this.liDesserts.UseCompatibleStateImageBehavior = false;
+            this.liDesserts.View = System.Windows.Forms.View.List;
             // 
             // liBreuvages
             // 
@@ -129,6 +132,7 @@
             this.liBreuvages.Size = new System.Drawing.Size(210, 375);
             this.liBreuvages.TabIndex = 16;
             this.liBreuvages.UseCompatibleStateImageBehavior = false;
+            this.liBreuvages.View = System.Windows.Forms.View.List;
             // 
             // label1
             // 

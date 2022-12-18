@@ -30,7 +30,7 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.comboBoxTableCommande.DisplayMember ="IdTable";
             this.comboBoxTableCommande.ValueMember = "IdCommande";
-            this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
+          //  this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
         
         }
 
