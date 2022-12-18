@@ -21,8 +21,8 @@ namespace Projet_4_etoiles.DataAccess.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            //options.UseSqlServer("Server=.\\SQL2019EXPRESS;Database=4Estrellas;Integrated security=true;TrustServerCertificate=true;");
-           options.UseSqlServer("Server=.\\SQLEXPRESS;Database=4Estrellas;Integrated security=true;TrustServerCertificate=true;");
+           options.UseSqlServer("Server=.\\SQL2019EXPRESS;Database=4Estrellas;Integrated security=true;TrustServerCertificate=true;");
+           //options.UseSqlServer("Server=.\\SQLEXPRESS;Database=4Estrellas;Integrated security=true;TrustServerCertificate=true;");
         }
 
         /****/

@@ -31,9 +31,9 @@ namespace Projet_4_etoiles.Business.Services
             return this.commandeDAO.Delete(commande);
         }
 
-        //public List<CommandeDTO> GetAllCommandes()
-        //{
-        //    return this.commandeDAO.;
-        //}
+        public List<CommandeDTO> GetAllCommandes()
+        {
+            return this.commandeDAO.GetAll();
+        }
     }
 }

@@ -29,11 +29,11 @@ public class CommandeDAO
         //retourne DTO Commande
     }
 
-    //public List<CommandeDTO> GetAll()
-    //{
-    //    return context.Commandes.ToList();
+    public List<CommandeDTO> GetAll()
+    {
+        return context.Commandes.ToList();
 
-    //}
+    }
 
     public CommandeDTO Create(CommandeDTO newCommande)
     {
