@@ -15,163 +15,130 @@ namespace Projet_4_etoiles.GUI.Forms
 {
     public partial class MenuForm : Form
     {
-        private MenuDTO workingMenu;
-        private ViewIntent workingIntent;
-        private ProjectContext projectContext;
+        private CommandeDTO? currentSelectedCommande;
+        private MenuDTO? currentSelectedItem;
+        private CreateItem createNewItem;
+        private CommandeDTO commandeDTO;
         public MenuForm()
         {
             InitializeComponent();
-            this.projectContext = new ProjectContext();
+            this.createNewItem = new CreateItem();
+            this.Init();
         }
 
-        private void MenuForm_Load(object sender, EventArgs e)
+        private void Init()
         {
-            comboBoxCategorie.Items.Add("Plats Principaux");
-            comboBoxCategorie.Items.Add("Breuvages");
-            comboBoxCategorie.Items.Add("Desserts");
+            this.comboBoxCommandeId.DisplayMember = "Commande ID";
+            this.comboBoxCommandeId.ValueMember = "Id";
+            //this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
         }
 
 
-        public MenuDTO OpenWithIntent(MenuDTO menu, ViewIntent intent)
+        private void AddItemToListView(MenuDTO item)
         {
-            this.workingMenu = menu;
-            this.workingIntent = intent;
+            ListViewItem lvItem = new(item.Name);
+            lvItem.Tag = item.Id;
 
-            switch (this.workingIntent)
+            if (item.Category == "Plat principaux")
             {
-                case ViewIntent.CREATION:
-                    return this.OpenForCreation();
-                    break;
+                this.liPlatPrincipaux.Items.Add(lvItem);
+            }
+            else if (item.Category == "Desserts")
+            {
+                this.liDesserts.Items.Add(lvItem);
+            }
+            else if (item.Category == "Breuvages")
+            {
+                this.liBreuvages.Items.Add(lvItem);
+            }
+            else { MessageBox.Show("Aucune categorie a ete choisi."); }
 
-                case ViewIntent.MODIFICATION:
-                    return this.OpenForModification();
-                    break;
+        }
 
-                case ViewIntent.DELETION:
-                    return this.OpenForDeletion();
-                    break;
+        private void RemoveItemFromListView(MenuDTO item)
+        {
+            foreach (ListViewItem lvItem in this.liPlatPrincipaux.Items)
+            {
+                if (((int)lvItem.Tag) == item.Id)
+                {
+                    this.liPlatPrincipaux.Items.Remove(lvItem);
+                }
+            }
+            foreach (ListViewItem lvItem in this.liDesserts.Items)
+            {
+                if (((int)lvItem.Tag) == item.Id)
+                {
+                    this.liDesserts.Items.Remove(lvItem);
+                }
+            }
+            foreach (ListViewItem lvItem in this.liBreuvages.Items)
+            {
+                if (((int)lvItem.Tag) == item.Id)
+                {
+                    this.liBreuvages.Items.Remove(lvItem);
+                }
+            }
 
-                case ViewIntent.VISUALIZATION:
-                default:
-                    return this.OpenDisplay();
-                    break;
+        }
+        private void comboBoxCommandeId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.currentSelectedCommande = (CommandeDTO)this.comboBoxCommandeId.Items[this.comboBoxCommandeId.SelectedIndex];
+        }
+
+        private void btnCreateItem_Click(object sender, EventArgs e)
+        {
+            this.createNewItem.OpeenModal();
+            if (this.createNewItem.DialogResult == DialogResult.OK)
+            {
+                MenuDTO createdItem = this.createNewItem.GetCreatedItem();
+
+                if (createdItem.Category == "Plat principaux")
+                {
+                    this.liPlatPrincipaux.Items.Add(createdItem.Name);
+                }
+                else if (createdItem.Category == "Desserts")
+                {
+                    this.liDesserts.Items.Add(createdItem.Name);
+                }
+                else if (createdItem.Category == "Breuvages")
+                {
+                    this.liBreuvages.Items.Add(createdItem.Name);
+                }
+                else { MessageBox.Show("Aucune categorie a ete choisi."); }
+
+            }
+
+        }
+
+        private void btnSupprimerItem_Click(object sender, EventArgs e)
+        {
+            if (this.currentSelectedItem is not null)
+            {
+                MainService.GetInstance().GetMenuService().DeleteNewItem(this.currentSelectedItem);
+            }
+            this.ClearDetailsFields();
+        }
+
+        private void LoadCommandeSelector(List<CommandeDTO> commandes)
+        {
+            this.comboBoxCommandeId.Items.Clear();
+            foreach (CommandeDTO commande in commandes)
+            {
+                this.comboBoxCommandeId.Items.Add(commande);
             }
         }
 
-        protected MenuDTO OpenForCreation()
+        public void ClearDetailsFields()
         {
-            this.lblID.Text = "";
-            this.txtNomItem.Text = null;
-            this.txtPrixItem.Text = null;
-            this.comboBoxCategorie.SelectedText = null;
-            this.btnItems.Text = "Create";
+            this.liPlatPrincipaux.Items.Clear();
+            this.liDesserts.Items.Clear();
+            this.liBreuvages.Items.Clear();
+        }
 
+        public void OpenMenuForm()
+        {
+            this.DialogResult = DialogResult.None;
             this.ShowDialog();
-            return this.workingMenu;
-        }
-
-        protected MenuDTO OpenForModification()
-        {
-            this.lblID.Text = this.workingMenu.Id.ToString();
-            this.txtNomItem.Text = this.workingMenu.Name;
-            this.txtPrixItem.Text = this.workingMenu.Price.ToString();
-            this.comboBoxCategorie.SelectedValue = this.workingMenu.Category;
-            this.btnItems.Text = "Save Changes";
-
-            this.ShowDialog();
-            return this.workingMenu;
-
-        }
-
-        protected MenuDTO OpenDisplay()
-        {
-            this.lblID.Text = this.workingMenu.Id.ToString();
-            this.txtNomItem.Text = this.workingMenu.Name;
-            this.txtPrixItem.Text = this.workingMenu.Price.ToString();
-            this.comboBoxCategorie.SelectedValue = this.workingMenu.Category;
-            this.btnItems.Text = "Display";
-
-            this.ShowDialog();
-            return this.workingMenu;
-
-        }
-
-        protected MenuDTO OpenForDeletion()
-        {
-            this.txtNomItem.Enabled = false;
-            this.txtPrixItem.Enabled = false;
-            this.comboBoxCategorie.Enabled = false;
-
-            this.lblID.Text = this.workingMenu.Id.ToString();
-            this.txtNomItem.Text = this.workingMenu.Name;
-            this.txtPrixItem.Text = this.workingMenu.Price.ToString();
-            this.comboBoxCategorie.SelectedValue = this.workingMenu.Category;
-            this.btnItems.Text = "Delete";
-
-            this.ShowDialog();
-            return this.workingMenu;
-
-        }
-
-        protected void TriggerDTOCreation()
-        {
-            // TODO: Validation
-            this.workingMenu.Name = this.txtNomItem.Text;
-            this.workingMenu.Category = this.comboBoxCategorie.SelectedText.ToString();
-            this.workingMenu.Price = int.Parse(this.txtPrixItem.Text);
-            MainService.GetInstance().GetMenuService().CreateNewItem(this.workingMenu);
-            //projectContext.Menu.Add(this.workingMenu);
-
-            this.DialogResult = DialogResult.OK;
-        }
-
-        protected void TriggerDTOModification()
-        {
-            // TODO: Validation
-            this.workingMenu.Name = this.txtNomItem.Text;
-            this.workingMenu.Category = this.comboBoxCategorie.SelectedText.ToString();
-            this.workingMenu.Price = int.Parse(this.txtPrixItem.Text);
-            MainService.GetInstance().GetMenuService().ModifyItem(this.workingMenu);
-            this.DialogResult = DialogResult.OK;
-        }
-
-        protected void TriggerDTODeletion()
-        {
-            // TODO: Validation
-            this.workingMenu.Name = this.txtNomItem.Text;
-            this.workingMenu.Category = this.comboBoxCategorie.SelectedText.ToString();
-            this.workingMenu.Price = int.Parse(this.txtPrixItem.Text);
-            MainService.GetInstance().GetMenuService().DeleteNewItem(this.workingMenu);
-            this.DialogResult = DialogResult.OK;
-        }
-
-        protected void CloseModalWindow()
-        {
-            this.DialogResult = DialogResult.OK;
-        }
-
-
-        private void btnItems_Click(object sender, EventArgs e)
-        {
-            switch (this.workingIntent)
-            {
-                case ViewIntent.CREATION:
-                    this.TriggerDTOCreation();
-                    break;
-
-                case ViewIntent.MODIFICATION:
-                    this.TriggerDTOModification();
-                    break;
-
-                case ViewIntent.DELETION:
-                    this.TriggerDTODeletion();
-                    break;
-
-                case ViewIntent.VISUALIZATION:
-                default:
-                    this.CloseModalWindow();
-                    break;
-            }
         }
 
         private void btnFermeture_Click(object sender, EventArgs e)
@@ -179,6 +146,6 @@ namespace Projet_4_etoiles.GUI.Forms
             this.DialogResult = DialogResult.OK;
         }
 
-       
     }
+
 }

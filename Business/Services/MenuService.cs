@@ -17,7 +17,10 @@ public class MenuService : IService
     {
         this.menuDAO = new MenuDAO(appContext);
     }
-
+    public List<MenuDTO> GetAllCategories()
+    {
+        return this.menuDAO.GetAll();
+    }
     public MenuDTO CreateNewItem(string name, string categorie, int price)
     {
         MenuDTO newItem = new MenuDTO(name, categorie, price);

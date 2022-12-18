@@ -34,29 +34,22 @@
             this.lblPlats = new System.Windows.Forms.Label();
             this.lblDessert = new System.Windows.Forms.Label();
             this.lblBreuvage = new System.Windows.Forms.Label();
-            this.btnItems = new System.Windows.Forms.Button();
-            this.grboxManageItems = new System.Windows.Forms.GroupBox();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lableId = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxCategorie = new System.Windows.Forms.ComboBox();
-            this.lblPrix = new System.Windows.Forms.Label();
-            this.txtPrixItem = new System.Windows.Forms.TextBox();
-            this.lblNomItem = new System.Windows.Forms.Label();
-            this.txtNomItem = new System.Windows.Forms.TextBox();
             this.liPlatPrincipaux = new System.Windows.Forms.ListView();
             this.liDesserts = new System.Windows.Forms.ListView();
             this.liBreuvages = new System.Windows.Forms.ListView();
-            this.grboxManageItems.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCommandeId = new System.Windows.Forms.ComboBox();
+            this.btnCreateItem = new System.Windows.Forms.Button();
+            this.btnSupprimerItem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAjouter
             // 
             this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAjouter.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAjouter.Location = new System.Drawing.Point(245, 531);
+            this.btnAjouter.Location = new System.Drawing.Point(390, 531);
             this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(407, 82);
+            this.btnAjouter.Size = new System.Drawing.Size(242, 82);
             this.btnAjouter.TabIndex = 4;
             this.btnAjouter.Text = "Ajouter A La Commande";
             this.btnAjouter.UseVisualStyleBackColor = true;
@@ -65,9 +58,9 @@
             // 
             this.btnFermeture.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFermeture.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFermeture.Location = new System.Drawing.Point(913, 531);
+            this.btnFermeture.Location = new System.Drawing.Point(733, 541);
             this.btnFermeture.Name = "btnFermeture";
-            this.btnFermeture.Size = new System.Drawing.Size(299, 82);
+            this.btnFermeture.Size = new System.Drawing.Size(186, 72);
             this.btnFermeture.TabIndex = 5;
             this.btnFermeture.Text = "Fermer La Fenetre";
             this.btnFermeture.UseVisualStyleBackColor = true;
@@ -77,7 +70,7 @@
             // 
             this.lblTitre.AutoSize = true;
             this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitre.Location = new System.Drawing.Point(443, 9);
+            this.lblTitre.Location = new System.Drawing.Point(588, 9);
             this.lblTitre.Name = "lblTitre";
             this.lblTitre.Size = new System.Drawing.Size(331, 48);
             this.lblTitre.TabIndex = 6;
@@ -97,7 +90,7 @@
             // 
             this.lblDessert.AutoSize = true;
             this.lblDessert.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblDessert.Location = new System.Drawing.Point(390, 76);
+            this.lblDessert.Location = new System.Drawing.Point(333, 76);
             this.lblDessert.Name = "lblDessert";
             this.lblDessert.Size = new System.Drawing.Size(102, 30);
             this.lblDessert.TabIndex = 8;
@@ -107,110 +100,11 @@
             // 
             this.lblBreuvage.AutoSize = true;
             this.lblBreuvage.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblBreuvage.Location = new System.Drawing.Point(686, 76);
+            this.lblBreuvage.Location = new System.Drawing.Point(554, 76);
             this.lblBreuvage.Name = "lblBreuvage";
             this.lblBreuvage.Size = new System.Drawing.Size(121, 30);
             this.lblBreuvage.TabIndex = 9;
             this.lblBreuvage.Text = "Breuvages";
-            // 
-            // btnItems
-            // 
-            this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnItems.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnItems.Location = new System.Drawing.Point(30, 277);
-            this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(225, 121);
-            this.btnItems.TabIndex = 10;
-            this.btnItems.Text = "creer";
-            this.btnItems.UseVisualStyleBackColor = true;
-            this.btnItems.Click += new System.EventHandler(this.btnItems_Click);
-            // 
-            // grboxManageItems
-            // 
-            this.grboxManageItems.Controls.Add(this.lblID);
-            this.grboxManageItems.Controls.Add(this.lableId);
-            this.grboxManageItems.Controls.Add(this.label1);
-            this.grboxManageItems.Controls.Add(this.comboBoxCategorie);
-            this.grboxManageItems.Controls.Add(this.lblPrix);
-            this.grboxManageItems.Controls.Add(this.txtPrixItem);
-            this.grboxManageItems.Controls.Add(this.lblNomItem);
-            this.grboxManageItems.Controls.Add(this.txtNomItem);
-            this.grboxManageItems.Controls.Add(this.btnItems);
-            this.grboxManageItems.Location = new System.Drawing.Point(913, 76);
-            this.grboxManageItems.Name = "grboxManageItems";
-            this.grboxManageItems.Size = new System.Drawing.Size(299, 429);
-            this.grboxManageItems.TabIndex = 13;
-            this.grboxManageItems.TabStop = false;
-            this.grboxManageItems.Text = "groupBoxItems";
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(80, 233);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(106, 25);
-            this.lblID.TabIndex = 20;
-            this.lblID.Text = "PlaceHolder";
-            // 
-            // lableId
-            // 
-            this.lableId.AutoSize = true;
-            this.lableId.Location = new System.Drawing.Point(30, 233);
-            this.lableId.Name = "lableId";
-            this.lableId.Size = new System.Drawing.Size(34, 25);
-            this.lableId.TabIndex = 19;
-            this.lableId.Text = "ID:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Categorie:";
-            // 
-            // comboBoxCategorie
-            // 
-            this.comboBoxCategorie.FormattingEnabled = true;
-            this.comboBoxCategorie.Location = new System.Drawing.Point(116, 152);
-            this.comboBoxCategorie.Name = "comboBoxCategorie";
-            this.comboBoxCategorie.Size = new System.Drawing.Size(167, 33);
-            this.comboBoxCategorie.TabIndex = 17;
-            // 
-            // lblPrix
-            // 
-            this.lblPrix.AutoSize = true;
-            this.lblPrix.Location = new System.Drawing.Point(18, 106);
-            this.lblPrix.Name = "lblPrix";
-            this.lblPrix.Size = new System.Drawing.Size(44, 25);
-            this.lblPrix.TabIndex = 16;
-            this.lblPrix.Text = "Prix:";
-            // 
-            // txtPrixItem
-            // 
-            this.txtPrixItem.Location = new System.Drawing.Point(80, 103);
-            this.txtPrixItem.Name = "txtPrixItem";
-            this.txtPrixItem.PlaceholderText = "999.999$";
-            this.txtPrixItem.Size = new System.Drawing.Size(203, 31);
-            this.txtPrixItem.TabIndex = 15;
-            // 
-            // lblNomItem
-            // 
-            this.lblNomItem.AutoSize = true;
-            this.lblNomItem.Location = new System.Drawing.Point(18, 53);
-            this.lblNomItem.Name = "lblNomItem";
-            this.lblNomItem.Size = new System.Drawing.Size(56, 25);
-            this.lblNomItem.TabIndex = 14;
-            this.lblNomItem.Text = "Nom:";
-            // 
-            // txtNomItem
-            // 
-            this.txtNomItem.Location = new System.Drawing.Point(80, 53);
-            this.txtNomItem.Name = "txtNomItem";
-            this.txtNomItem.PlaceholderText = "Item name";
-            this.txtNomItem.Size = new System.Drawing.Size(203, 31);
-            this.txtNomItem.TabIndex = 13;
             // 
             // liPlatPrincipaux
             // 
@@ -222,7 +116,7 @@
             // 
             // liDesserts
             // 
-            this.liDesserts.Location = new System.Drawing.Point(350, 129);
+            this.liDesserts.Location = new System.Drawing.Point(272, 130);
             this.liDesserts.Name = "liDesserts";
             this.liDesserts.Size = new System.Drawing.Size(210, 375);
             this.liDesserts.TabIndex = 15;
@@ -230,21 +124,66 @@
             // 
             // liBreuvages
             // 
-            this.liBreuvages.Location = new System.Drawing.Point(655, 130);
+            this.liBreuvages.Location = new System.Drawing.Point(504, 130);
             this.liBreuvages.Name = "liBreuvages";
             this.liBreuvages.Size = new System.Drawing.Size(210, 375);
             this.liBreuvages.TabIndex = 16;
             this.liBreuvages.UseCompatibleStateImageBehavior = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 531);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "CommandeID:";
+            // 
+            // comboBoxCommandeId
+            // 
+            this.comboBoxCommandeId.FormattingEnabled = true;
+            this.comboBoxCommandeId.Location = new System.Drawing.Point(145, 531);
+            this.comboBoxCommandeId.Name = "comboBoxCommandeId";
+            this.comboBoxCommandeId.Size = new System.Drawing.Size(214, 33);
+            this.comboBoxCommandeId.TabIndex = 18;
+            this.comboBoxCommandeId.SelectedIndexChanged += new System.EventHandler(this.comboBoxCommandeId_SelectedIndexChanged);
+            // 
+            // btnCreateItem
+            // 
+            this.btnCreateItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCreateItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCreateItem.Location = new System.Drawing.Point(741, 220);
+            this.btnCreateItem.Name = "btnCreateItem";
+            this.btnCreateItem.Size = new System.Drawing.Size(176, 82);
+            this.btnCreateItem.TabIndex = 19;
+            this.btnCreateItem.Text = "Ajouter un item";
+            this.btnCreateItem.UseVisualStyleBackColor = true;
+            this.btnCreateItem.Click += new System.EventHandler(this.btnCreateItem_Click);
+            // 
+            // btnSupprimerItem
+            // 
+            this.btnSupprimerItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSupprimerItem.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSupprimerItem.Location = new System.Drawing.Point(741, 340);
+            this.btnSupprimerItem.Name = "btnSupprimerItem";
+            this.btnSupprimerItem.Size = new System.Drawing.Size(177, 82);
+            this.btnSupprimerItem.TabIndex = 20;
+            this.btnSupprimerItem.Text = "Supprimer Item";
+            this.btnSupprimerItem.UseVisualStyleBackColor = true;
+            this.btnSupprimerItem.Click += new System.EventHandler(this.btnSupprimerItem_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 625);
+            this.ClientSize = new System.Drawing.Size(930, 625);
+            this.Controls.Add(this.btnSupprimerItem);
+            this.Controls.Add(this.btnCreateItem);
+            this.Controls.Add(this.comboBoxCommandeId);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.liBreuvages);
             this.Controls.Add(this.liDesserts);
             this.Controls.Add(this.liPlatPrincipaux);
-            this.Controls.Add(this.grboxManageItems);
             this.Controls.Add(this.lblBreuvage);
             this.Controls.Add(this.lblDessert);
             this.Controls.Add(this.lblPlats);
@@ -253,9 +192,6 @@
             this.Controls.Add(this.btnAjouter);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
-            this.Load += new System.EventHandler(this.MenuForm_Load);
-            this.grboxManageItems.ResumeLayout(false);
-            this.grboxManageItems.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,18 +204,12 @@
         private Label lblPlats;
         private Label lblDessert;
         private Label lblBreuvage;
-        private Button btnItems;
-        private GroupBox grboxManageItems;
-        private Label lblPrix;
-        private TextBox txtPrixItem;
-        private Label lblNomItem;
-        private TextBox txtNomItem;
-        private Label lblID;
-        private Label lableId;
-        private Label label1;
-        private ComboBox comboBoxCategorie;
         private ListView liPlatPrincipaux;
         private ListView liDesserts;
         private ListView liBreuvages;
+        private Label label1;
+        private ComboBox comboBoxCommandeId;
+        private Button btnCreateItem;
+        private Button btnSupprimerItem;
     }
 }

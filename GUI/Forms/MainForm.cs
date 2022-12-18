@@ -29,7 +29,7 @@ namespace Projet_4_etoiles
 
         private void btnOpenMenu_Click(object sender, EventArgs e)
         {
-            mForm.OpenWithIntent(menuDTO, viewInt);
+            mForm.OpenMenuForm();
         }
 
         private void btnVoirCommandes_Click(object sender, EventArgs e)
