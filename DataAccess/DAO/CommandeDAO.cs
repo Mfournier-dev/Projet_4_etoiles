@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Projet_4_etoiles.DataAccess.DAO
 {
-    public class CommandeDAO : IDAO<CommandeDTO>
+    public class CommandeDAO 
     {
         private ProjectContext context;
 
@@ -29,11 +29,12 @@ namespace Projet_4_etoiles.DataAccess.DAO
             //retourne DTO Commande
         }
 
-        public List<CommandeDTO> GetAll()
-        {
-            return context.Commandes.ToList();
-            //retourne DTO Commande
-        }
+        //public List<CommandeDTO> GetAll()
+        //{
+        //    return context.Commandes.ToList();
+            
+            
+        //}
 
         public CommandeDTO Create(CommandeDTO newCommande)
         {

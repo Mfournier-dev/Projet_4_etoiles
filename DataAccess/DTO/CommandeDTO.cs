@@ -19,10 +19,10 @@ namespace Projet_4_etoiles.DataAccess.DTO
         [Required]
         [Column("IdTable")]
         public int IdTable { get; set; }
-        
-        
-        [Column("NombreClients")]
+
         [Required]
+        [Column("NombreClients")]
+        
         
         public int NombreClients { get; set; }
 
