@@ -19,11 +19,21 @@ namespace Projet_4_etoiles.Business.Services
         }
 
 // constructeur prend les parametres obligatoires, les memes que le DTO.
-        public CommandeDTO CreateCommande(int nombreClients, int nombreArticles)
+        public CommandeDTO CreateCommande(int idTable,int nombreClients, int nombreArticles)
         {
-            CommandeDTO commande = new CommandeDTO(nombreClients,nombreArticles);
+            CommandeDTO commande = new CommandeDTO(idTable,nombreClients,nombreArticles);
             this.commandeDAO.Create(commande);
             return commande;
+        }
+
+        public CommandeDTO DeleteCommande(CommandeDTO commande) 
+        { 
+            return this.commandeDAO.Delete(commande);
+        } 
+
+        public List<CommandeDTO> GetAllCommandes() 
+        {
+            return this.commandeDAO.GetAll();
         }
     }
 }

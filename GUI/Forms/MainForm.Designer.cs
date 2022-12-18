@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnOpenMenu = new System.Windows.Forms.Button();
+            this.btnVoirCommandes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAssignation
@@ -42,10 +43,10 @@
             this.btnAssignation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAssignation.Font = new System.Drawing.Font("Pristina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAssignation.ForeColor = System.Drawing.Color.Black;
-            this.btnAssignation.Location = new System.Drawing.Point(514, 442);
+            this.btnAssignation.Location = new System.Drawing.Point(436, 442);
             this.btnAssignation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAssignation.Name = "btnAssignation";
-            this.btnAssignation.Size = new System.Drawing.Size(136, 48);
+            this.btnAssignation.Size = new System.Drawing.Size(197, 48);
             this.btnAssignation.TabIndex = 0;
             this.btnAssignation.Text = "Réservation";
             this.btnAssignation.UseVisualStyleBackColor = false;
@@ -86,6 +87,22 @@
             this.btnOpenMenu.UseVisualStyleBackColor = true;
             this.btnOpenMenu.Click += new System.EventHandler(this.btnOpenMenu_Click);
             // 
+            // btnVoirCommandes
+            // 
+            this.btnVoirCommandes.BackColor = System.Drawing.Color.Gold;
+            this.btnVoirCommandes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVoirCommandes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoirCommandes.Font = new System.Drawing.Font("Pristina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVoirCommandes.ForeColor = System.Drawing.Color.Black;
+            this.btnVoirCommandes.Location = new System.Drawing.Point(161, 442);
+            this.btnVoirCommandes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnVoirCommandes.Name = "btnVoirCommandes";
+            this.btnVoirCommandes.Size = new System.Drawing.Size(197, 48);
+            this.btnVoirCommandes.TabIndex = 5;
+            this.btnVoirCommandes.Text = "Voir les commandes";
+            this.btnVoirCommandes.UseVisualStyleBackColor = false;
+            this.btnVoirCommandes.Click += new System.EventHandler(this.btnVoirCommandes_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -93,6 +110,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(771, 563);
+            this.Controls.Add(this.btnVoirCommandes);
             this.Controls.Add(this.btnOpenMenu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -111,5 +129,6 @@
         private Label label1;
         private Label label2;
         private Button btnOpenMenu;
+        private Button btnVoirCommandes;
     }
 }

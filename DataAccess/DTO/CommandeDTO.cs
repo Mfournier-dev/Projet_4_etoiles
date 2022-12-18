@@ -32,6 +32,9 @@ namespace Projet_4_etoiles.DataAccess.DTO
 
         public List<MenuDTO>? ArticlesCommandes { get; set; }
         
+        [ForeignKey("IdTable")]
+        public TablesDTO Table { get; set; }
+        
         
         /// <summary>
         /// Crée par Karine // A retravailler, quels parametres sont obligatoires pour creer la commande.
@@ -39,8 +42,9 @@ namespace Projet_4_etoiles.DataAccess.DTO
         /// <param name="nombreClients"></param>
         /// <param name="nombreArticles"></param>
 
-        public CommandeDTO(int nombreClients,int nombreArticles)
+        public CommandeDTO(int idTable,int nombreClients,int nombreArticles)
         {
+            this.IdTable = idTable;
             this.NombreClients = nombreClients;
             this.NombreArticles = nombreArticles;
         }

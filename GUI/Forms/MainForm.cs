@@ -32,6 +32,9 @@ namespace Projet_4_etoiles
             mForm.OpenWithIntent(menuDTO, viewInt);
         }
 
-      
+        private void btnVoirCommandes_Click(object sender, EventArgs e)
+        {
+            commandeForm.OpenCommandeWindow();
+        }
     }
 }

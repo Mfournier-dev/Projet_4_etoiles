@@ -14,8 +14,11 @@ namespace Projet_4_etoiles.DataAccess.DAO
 
         public CommandeDAO(ProjectContext context) 
         {
-            
+            if(context is null) 
+            { 
                 context = new ProjectContext();
+            }
+            this.context = context;
             
             
         }
@@ -28,7 +31,7 @@ namespace Projet_4_etoiles.DataAccess.DAO
 
         public List<CommandeDTO> GetAll()
         {
-            return this.context.Commandes.ToList();
+            return context.Commandes.ToList();
             //retourne DTO Commande
         }
 
