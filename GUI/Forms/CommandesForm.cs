@@ -88,5 +88,15 @@ namespace Projet_4_etoiles.GUI.Forms
             this.currentSelectedCommande = (CommandeDTO)this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
             this.LoadCommandeFields(this.currentSelectedCommande);
         }
+
+        private void btnSupprimerArticle_Click(object sender, EventArgs e)
+        {
+
+            if (this.currentSelectedCommande is not null) 
+            {
+                List<MenuDTO> articlesInCommande = MainService.GetInstance().GetCommandesArticlesService().GetAllArticlesForCommande(this.currentSelectedCommande.IdCommande);
+
+            }
+        }
     }
 }

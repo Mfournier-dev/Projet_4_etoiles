@@ -154,7 +154,6 @@
             this.listViewCommande.TabIndex = 3;
             this.listViewCommande.UseCompatibleStateImageBehavior = false;
             this.listViewCommande.View = System.Windows.Forms.View.List;
-            
             // 
             // colonneArticle
             // 
@@ -184,6 +183,7 @@
             this.btnSupprimerArticle.TabIndex = 1;
             this.btnSupprimerArticle.Text = "Supprimer Article";
             this.btnSupprimerArticle.UseVisualStyleBackColor = true;
+            this.btnSupprimerArticle.Click += new System.EventHandler(this.btnSupprimerArticle_Click);
             // 
             // btnRetourMenu
             // 
