@@ -54,6 +54,7 @@
             this.comboBoxTableCommande.Name = "comboBoxTableCommande";
             this.comboBoxTableCommande.Size = new System.Drawing.Size(61, 28);
             this.comboBoxTableCommande.TabIndex = 0;
+            this.comboBoxTableCommande.SelectedIndexChanged += new System.EventHandler(this.comboBoxTableCommande_SelectedIndexChanged);
             // 
             // lblNumeroTable
             // 
@@ -153,7 +154,7 @@
             this.listViewCommande.TabIndex = 3;
             this.listViewCommande.UseCompatibleStateImageBehavior = false;
             this.listViewCommande.View = System.Windows.Forms.View.List;
-            this.listViewCommande.SelectedIndexChanged += new System.EventHandler(this.listViewCommande_SelectedIndexChanged);
+            
             // 
             // colonneArticle
             // 

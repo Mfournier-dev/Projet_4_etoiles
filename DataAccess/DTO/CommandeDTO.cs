@@ -27,8 +27,8 @@ public class CommandeDTO : IDTO
     [Required]
     public int NombreArticles { get; set; }
 
-    public List<MenuDTO>? ArticlesCommandes { get; set; }
-    
+    public List<CommandesArticlesDTO> ArticlesCommandes { get; set; }
+
     [ForeignKey("IdTable")]
     public TablesDTO Table { get; set; }
     

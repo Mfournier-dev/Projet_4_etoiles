@@ -30,7 +30,7 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.comboBoxTableCommande.DisplayMember ="IdTable";
             this.comboBoxTableCommande.ValueMember = "IdCommande";
-            //this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
+            this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
         
         }
 
@@ -74,15 +74,19 @@ namespace Projet_4_etoiles.GUI.Forms
         
         }
 
-        private void listViewCommande_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.currentSelectedCommande = (CommandeDTO) this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
-            this.LoadCommandeFields(this.currentSelectedCommande);
-        }
+        
 
         private void btnRetourMenu_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            this.currentSelectedCommande = (CommandeDTO)this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
+            this.LoadCommandeFields(this.currentSelectedCommande);
+        }
+
+        private void comboBoxTableCommande_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.listViewCommande.Items.Clear();
+            this.currentSelectedCommande = (CommandeDTO)this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
+            this.LoadCommandeFields(this.currentSelectedCommande);
         }
     }
 }
