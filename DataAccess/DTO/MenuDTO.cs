@@ -25,11 +25,10 @@ public class MenuDTO : IDTO
 
     [Column("Prix")]
     [Required]
-    public int Price { get; set; }
+    public decimal Price { get; set; }
 
-    public List<MenuDTO> categories { get; set; }
 
-    public MenuDTO(string name, string category, int price)
+    public MenuDTO(string name, string category, decimal price)
     {
         Name = name;
         Category = category;

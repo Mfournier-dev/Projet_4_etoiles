@@ -29,11 +29,11 @@ namespace Projet_4_etoiles.Business.Services
         public CommandeDTO DeleteCommande(CommandeDTO commande) 
         { 
             return this.commandeDAO.Delete(commande);
-        } 
+        }
 
-        //public List<CommandeDTO> GetAllCommandes() 
+        //public List<CommandeDTO> GetAllCommandes()
         //{
-        //    return this.commandeDAO.GetAll();
+        //    return this.commandeDAO.;
         //}
     }
 }

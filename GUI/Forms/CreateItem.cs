@@ -26,20 +26,19 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.comboBoxCategorie.DisplayMember = "Title";
             this.comboBoxCategorie.ValueMember = "Category";
-            this.LoadCategorySelector(MainService.GetInstance().GetMenuService().GetAllCategories());
         }
         private void CreateItem_Load(object sender, EventArgs e)
         {
-            string categorie1 = "Plats principaux";
-            comboBoxCategorie.Items.Add(categorie1);
-            comboBoxCategorie.Items.Add("Desserts");
-            comboBoxCategorie.Items.Add("Breuvages");
+            
         }
         public void OpeenModal()
         {
             this.txtNomItem.Text = null;
             this.txtPrixItem.Text = null;
-            this.comboBoxCategorie.SelectedIndex = 1;
+            string categorie1 = "Plats principaux";
+            comboBoxCategorie.Items.Add(categorie1);
+            comboBoxCategorie.Items.Add("Desserts");
+            comboBoxCategorie.Items.Add("Breuvages");
             this.DialogResult = DialogResult.None;
             this.ShowDialog();
         }
@@ -52,8 +51,8 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.createdItem = MainService.GetInstance().GetMenuService().CreateNewItem(
                 this.txtNomItem.Text,
-                this.comboBoxCategorie.SelectedItem.ToString(),
-                int.Parse(this.txtPrixItem.Text)
+                this.comboBoxCategorie.SelectedIndex.ToString(),
+                Convert.ToDecimal(this.txtPrixItem.Text)
                 );
 
             this.DialogResult = DialogResult.OK;

@@ -28,9 +28,9 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void Init()
         {
-            this.comboBoxCommandeId.DisplayMember = "Commande ID";
+            this.comboBoxCommandeId.DisplayMember = "idCommande";
             this.comboBoxCommandeId.ValueMember = "Id";
-            //this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
+            //this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().get);
         }
 
 
@@ -82,7 +82,7 @@ namespace Projet_4_etoiles.GUI.Forms
         }
         private void comboBoxCommandeId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.currentSelectedCommande = (CommandeDTO)this.comboBoxCommandeId.Items[this.comboBoxCommandeId.SelectedIndex];
+            this.currentSelectedCommande = (CommandeDTO) this.comboBoxCommandeId.Items[this.comboBoxCommandeId.SelectedIndex];
         }
 
         private void btnCreateItem_Click(object sender, EventArgs e)

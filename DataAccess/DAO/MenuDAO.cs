@@ -26,6 +26,7 @@ public class MenuDAO : IDAO<MenuDTO>
         return this.context.Menu.ToList();
     }
 
+
     public MenuDTO GetById(int id)
     {
         return this.context.Menu.Where(menu => menu.Id == id).Single();
@@ -51,4 +52,5 @@ public class MenuDAO : IDAO<MenuDTO>
         this.context.SaveChanges();
         return newMenu;
     }
+
 }
