@@ -16,5 +16,11 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             InitializeComponent();
         }
+
+        public void Init() 
+        { 
+        
+        
+        }
     }
 }

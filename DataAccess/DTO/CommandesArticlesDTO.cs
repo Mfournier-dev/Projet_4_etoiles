@@ -11,23 +11,40 @@ namespace Projet_4_etoiles.DataAccess.DTO
     [Table("T_CommandesArticles")]   
     public class CommandesArticlesDTO : IDTO
     {
-        [Column("IdCA")]
         [Key]
-
+        [Column("IdCA")]
         public int IdCA { get; set; }
-
-        [Column("IdCommande")]
-        [ForeignKey("IdCommande")]
-
-        public int IdCommande { get; set; }
-
+        [Required]
         [Column("IdArticle")]
-        [ForeignKey("IdArticle")]
+        
 
         public int IdArticle { get; set; }
-
-        [Column("Quantite")]
         [Required]
+        [Column("IdCommande")]
+        
+
+        public int IdCommande { get; set; }
+        [Required]
+        [Column("Quantite")]
+        
         public int Quantite { get; set; }
+
+        [ForeignKey("IdArticle")]
+        public MenuDTO Article { get; set; }
+
+        [ForeignKey("IdCommande")]
+        public CommandeDTO Commande { get; set; }
+
+        public CommandesArticlesDTO() 
+        { 
+        
+        }
+        public CommandesArticlesDTO(int articleId, int commandeId) 
+        {
+            this.IdArticle = articleId;
+            this.IdCommande = commandeId;
+            
+           
+        }
     }
 }

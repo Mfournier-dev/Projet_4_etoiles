@@ -11,11 +11,13 @@ namespace Projet_4_etoiles
         private UtilisationForm uForm;
         private MenuForm mForm;
         private MenuDTO menuDTO;
+        private CommandesForm commandeForm;
         private ViewIntent viewInt;
         public MainForm()
         {
             InitializeComponent();
             this.uForm = new UtilisationForm();
+            this.commandeForm = new CommandesForm();
             this.mForm = new MenuForm();
             this.viewInt = new ViewIntent();
         }

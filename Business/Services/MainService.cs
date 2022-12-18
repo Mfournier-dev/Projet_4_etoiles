@@ -13,10 +13,12 @@ namespace Projet_4_etoiles.Business.Services
     public class MainService : IService
     {
         //Ajouter tous les classes services dans le projet.
+        
         private UtilisationForm utilisationForm;
         private ProjectContext _projectContext;
         private CommandeService _commandeService;
         private UtilisationService _utilisationService;
+        private CommandesArticlesService _commandesArticlesService;
         private MenuService _menuService;
 
 
@@ -30,7 +32,9 @@ namespace Projet_4_etoiles.Business.Services
             this._projectContext = new ProjectContext();
             this._commandeService = new CommandeService(this._projectContext);
             this._menuService = new MenuService(this._projectContext);
+            this._commandesArticlesService = new CommandesArticlesService(this._projectContext);
             this._utilisationService = new UtilisationService(this._projectContext);
+            
         }
 
         public static MainService GetInstance()
@@ -73,6 +77,11 @@ namespace Projet_4_etoiles.Business.Services
         public UtilisationService GetUtilisationService() 
         {
             return this._utilisationService;
+        }
+
+        public CommandesArticlesService GetCommandesArticlesService() 
+        {
+            return this._commandesArticlesService;
         }
 
     }

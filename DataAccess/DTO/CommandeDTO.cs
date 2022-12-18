@@ -12,41 +12,37 @@ namespace Projet_4_etoiles.DataAccess.DTO
 
     public class CommandeDTO : IDTO
     {
-        [Column("IdCommande")]
         [Key]
+        [Column("IdCommande")]
         public int IdCommande { get; set; }
-
-        [Column("IdTable")]
-        [Required]
         
+        [Required]
+        [Column("IdTable")]
         public int IdTable { get; set; }
+        
+        
         [Column("NombreClients")]
         [Required]
-        [ForeignKey("IdTable")]
+        
         public int NombreClients { get; set; }
 
         [Column("NombreArticles")]
         [Required]
-        public int? NombreArticles { get; set; }
+        public int NombreArticles { get; set; }
 
         public List<MenuDTO>? ArticlesCommandes { get; set; }
         
-
         
         /// <summary>
         /// Crée par Karine // A retravailler, quels parametres sont obligatoires pour creer la commande.
         /// </summary>
         /// <param name="nombreClients"></param>
-        /// <param name="articlesCommandes"></param>
         /// <param name="nombreArticles"></param>
 
-        public CommandeDTO(int nombreClients, List<MenuDTO> articlesCommandes, int nombreArticles)
+        public CommandeDTO(int nombreClients,int nombreArticles)
         {
             this.NombreClients = nombreClients;
-            this.ArticlesCommandes = articlesCommandes;
             this.NombreArticles = nombreArticles;
         }
-
-        public CommandeDTO() { }
     }
 }
