@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -110,22 +111,54 @@ namespace Projet_4_etoiles
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            string phonepattern = @"^(\+0?1\s)?\(?\d{3}\)?[\s-]\d{3}[\s-]\d{4}$";
+            Regex phoneregex = new Regex(phonepattern, RegexOptions.Compiled);
 
-            string hourString = cbReservationHour.Text;
-            DateTime dateTime = DateTime.ParseExact(hourString, "H:mm", null, System.Globalization.DateTimeStyles.None);
-            this.createdUtilisation = MainService.GetInstance().GetUtilisationService().CreateUtilisation(
-                int.Parse(this.txtNombrePersonnes.Text),
-                int.Parse(this.cbNoTable.Text),
-                this.dtpDateReservation.Value,
-                dateTime,
-                this.txtNomReservation.Text,
-                this.txtNoTelephone.Text
-                );
-            this.cbUtilisationList.Items.Add(createdUtilisation);
-            ClearFields();
-            DeactivateFields();
-            ResetButtons();
+            if (this.cbReservationHour.Text == "")
+            {
+                MessageBox.Show("Veuillez choisir une heure de réservation.", "Erreur : Heure de réservation manquante");
+                cbReservationHour.Focus();
+                return;
+            }
 
+            if (this.cbNoTable.Text == "")
+            {
+                MessageBox.Show("Veuillez choisir une table pour l'assignation", "Erreur : Table manquante");
+                cbNoTable.Focus();
+                return;
+            }
+
+            if (!phoneregex.IsMatch(this.txtNoTelephone.Text))
+            {
+                MessageBox.Show("Veuillez entrer un numéro de Téléphone valide.", "Erreur : Numéro de téléphone");
+                txtNoTelephone.Focus();
+                return;
+            }
+
+            if (this.txtNombrePersonnes.Text == "")
+            {
+                MessageBox.Show("Vous devez choisir le nombre de personnes sur l'assignation", "Erreur : Nombre de personnes invalide");
+                txtNombrePersonnes.Focus();
+                return;
+            }
+
+
+            else { 
+                string hourString = cbReservationHour.Text;
+                DateTime dateTime = DateTime.ParseExact(hourString, "H:mm", null, System.Globalization.DateTimeStyles.None);
+                this.createdUtilisation = MainService.GetInstance().GetUtilisationService().CreateUtilisation(
+                    int.Parse(this.txtNombrePersonnes.Text),
+                    int.Parse(this.cbNoTable.Text),
+                    this.dtpDateReservation.Value,
+                    dateTime,
+                    this.txtNomReservation.Text,
+                    this.txtNoTelephone.Text
+                    );
+                this.cbUtilisationList.Items.Add(createdUtilisation);
+                ClearFields();
+                DeactivateFields();
+                ResetButtons();
+                        }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -141,6 +174,38 @@ namespace Projet_4_etoiles
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+
+            string phonepattern = @"^(\+0?1\s)?\(?\d{3}\)?[\s-]\d{3}[\s-]\d{4}$";
+            Regex phoneregex = new Regex(phonepattern, RegexOptions.Compiled);
+
+            if (this.cbReservationHour.Text == "")
+            {
+                MessageBox.Show("Veuillez choisir une heure de réservation.", "Erreur : Heure de réservation manquante");
+                cbReservationHour.Focus();
+                return;
+            }
+
+            if (this.cbNoTable.Text == "")
+            {
+                MessageBox.Show("Veuillez choisir une table pour l'assignation", "Erreur : Table manquante");
+                cbNoTable.Focus();
+                return;
+            }
+
+            if (!phoneregex.IsMatch(this.txtNoTelephone.Text))
+            {
+                MessageBox.Show("Veuillez entrer un numéro de Téléphone valide.", "Erreur : Numéro de téléphone");
+                txtNoTelephone.Focus();
+                return;
+            }
+
+            if (this.txtNombrePersonnes.Text == "")
+            {
+                MessageBox.Show("Vous devez choisir le nombre de personnes sur l'assignation", "Erreur : Nombre de personnes invalide");
+                txtNombrePersonnes.Focus();
+                return;
+            }
+            else { 
             string hourString = cbReservationHour.Text;
             DateTime dateTime = DateTime.ParseExact(hourString, "H:mm", null, System.Globalization.DateTimeStyles.None);
 
@@ -155,6 +220,7 @@ namespace Projet_4_etoiles
             DeactivateFields();
             ResetButtons();
             this.LoadUtilisationSelector(MainService.GetInstance().GetUtilisationService().GetAllUtilisations());
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -183,6 +249,21 @@ namespace Projet_4_etoiles
             this.dtpDateReservation.Enabled = false;
             this.txtNomReservation.ReadOnly = true;
             this.txtNoTelephone.ReadOnly = true;
+        }
+
+        private void dtpDateReservation_ValueChanged(object sender, EventArgs e)
+        {
+   
+        }
+
+        private void txtNomReservation_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void txtNombrePersonnes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

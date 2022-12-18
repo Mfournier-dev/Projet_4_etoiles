@@ -197,6 +197,7 @@
             this.txtNombrePersonnes.Size = new System.Drawing.Size(227, 27);
             this.txtNombrePersonnes.TabIndex = 38;
             this.txtNombrePersonnes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNombrePersonnes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePersonnes_KeyPress);
             // 
             // lblNombrePersonnes
             // 
@@ -244,6 +245,7 @@
             this.txtNomReservation.Size = new System.Drawing.Size(227, 27);
             this.txtNomReservation.TabIndex = 35;
             this.txtNomReservation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNomReservation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomReservation_KeyPress);
             // 
             // lblReservationHour
             // 
@@ -293,6 +295,7 @@
             this.dtpDateReservation.Name = "dtpDateReservation";
             this.dtpDateReservation.Size = new System.Drawing.Size(226, 23);
             this.dtpDateReservation.TabIndex = 55;
+            this.dtpDateReservation.ValueChanged += new System.EventHandler(this.dtpDateReservation_ValueChanged);
             // 
             // btnConfirm
             // 

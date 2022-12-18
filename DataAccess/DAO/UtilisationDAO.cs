@@ -52,7 +52,19 @@ namespace Projet_4_etoiles.DataAccess.DAO
             return utilisation;
         }
 
-        
+
+        public List<TablesDTO> GetTablesByHour()
+        {
+            DateTime now = DateTime.Now;
+            DateTime inAHour = DateTime.Now.AddHours(1);
+
+
+            return (List<TablesDTO>)this._context.Utilisations.Where(utilisation => utilisation.DateReservation.Year == now.Year
+            && (utilisation.DateReservation.Month == now.Month)
+            && (utilisation.DateReservation.Day == now.Day) &&
+           (utilisation.HeureReservation.Hour == now.Hour) && (utilisation.HeureReservation <= inAHour));
+
+        }
 
         public List<UtilisationDTO> GetByHour()
         {
@@ -64,9 +76,9 @@ namespace Projet_4_etoiles.DataAccess.DAO
             && (utilisation.DateReservation.Month == now.Month)
             && (utilisation.DateReservation.Day == now.Day) &&
            (utilisation.HeureReservation.Hour == now.Hour) && (utilisation.HeureReservation <= inAHour));
-            
+
         }
-        
+
 
     }
 }
