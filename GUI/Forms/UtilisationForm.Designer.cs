@@ -49,6 +49,7 @@
             this.lblNomReservation = new System.Windows.Forms.Label();
             this.cbUtilisationList = new System.Windows.Forms.ComboBox();
             this.dtpDateReservation = new System.Windows.Forms.DateTimePicker();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblTablesUsed
@@ -63,13 +64,15 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.Location = new System.Drawing.Point(582, 260);
+            this.btnSave.Location = new System.Drawing.Point(491, 219);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 33);
+            this.btnSave.Size = new System.Drawing.Size(121, 33);
             this.btnSave.TabIndex = 51;
             this.btnSave.Text = "Sauvegarder";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblDisplayId
             // 
@@ -77,8 +80,9 @@
             this.lblDisplayId.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblDisplayId.Location = new System.Drawing.Point(220, 110);
             this.lblDisplayId.Name = "lblDisplayId";
-            this.lblDisplayId.Size = new System.Drawing.Size(226, 32);
+            this.lblDisplayId.Size = new System.Drawing.Size(227, 32);
             this.lblDisplayId.TabIndex = 50;
+            this.lblDisplayId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitle
             // 
@@ -104,17 +108,18 @@
             // txtNoTelephone
             // 
             this.txtNoTelephone.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNoTelephone.Location = new System.Drawing.Point(221, 251);
+            this.txtNoTelephone.Location = new System.Drawing.Point(221, 316);
             this.txtNoTelephone.Name = "txtNoTelephone";
             this.txtNoTelephone.Size = new System.Drawing.Size(226, 27);
             this.txtNoTelephone.TabIndex = 45;
+            this.txtNoTelephone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblNoTelephone
             // 
             this.lblNoTelephone.AutoSize = true;
             this.lblNoTelephone.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNoTelephone.ForeColor = System.Drawing.Color.Black;
-            this.lblNoTelephone.Location = new System.Drawing.Point(34, 254);
+            this.lblNoTelephone.Location = new System.Drawing.Point(34, 319);
             this.lblNoTelephone.Name = "lblNoTelephone";
             this.lblNoTelephone.Size = new System.Drawing.Size(174, 20);
             this.lblNoTelephone.TabIndex = 44;
@@ -123,38 +128,42 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnUpdate.Location = new System.Drawing.Point(642, 221);
+            this.btnUpdate.Location = new System.Drawing.Point(642, 180);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(117, 33);
             this.btnUpdate.TabIndex = 43;
             this.btnUpdate.Text = "Modifier";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(516, 221);
+            this.btnAdd.Location = new System.Drawing.Point(491, 180);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(120, 33);
             this.btnAdd.TabIndex = 42;
             this.btnAdd.Text = "Créer";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(765, 221);
+            this.btnDelete.Location = new System.Drawing.Point(779, 197);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 33);
             this.btnDelete.TabIndex = 41;
             this.btnDelete.Text = "Supprimer";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cbNoTable
             // 
             this.cbNoTable.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbNoTable.FormattingEnabled = true;
             this.cbNoTable.Items.AddRange(new object[] {
+            "",
             "1",
             "2",
             "3",
@@ -162,10 +171,10 @@
             "5",
             "6",
             "7",
-            "8",
-            "9",
-            "10"});
-            this.cbNoTable.Location = new System.Drawing.Point(300, 184);
+            "12",
+            "13",
+            "14"});
+            this.cbNoTable.Location = new System.Drawing.Point(299, 229);
             this.cbNoTable.Name = "cbNoTable";
             this.cbNoTable.Size = new System.Drawing.Size(66, 28);
             this.cbNoTable.TabIndex = 40;
@@ -174,7 +183,7 @@
             // 
             this.lblNoTable.AutoSize = true;
             this.lblNoTable.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNoTable.Location = new System.Drawing.Point(72, 187);
+            this.lblNoTable.Location = new System.Drawing.Point(71, 232);
             this.lblNoTable.Name = "lblNoTable";
             this.lblNoTable.Size = new System.Drawing.Size(137, 20);
             this.lblNoTable.TabIndex = 39;
@@ -183,16 +192,17 @@
             // txtNombrePersonnes
             // 
             this.txtNombrePersonnes.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombrePersonnes.Location = new System.Drawing.Point(221, 151);
+            this.txtNombrePersonnes.Location = new System.Drawing.Point(220, 357);
             this.txtNombrePersonnes.Name = "txtNombrePersonnes";
             this.txtNombrePersonnes.Size = new System.Drawing.Size(227, 27);
             this.txtNombrePersonnes.TabIndex = 38;
+            this.txtNombrePersonnes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblNombrePersonnes
             // 
             this.lblNombrePersonnes.AutoSize = true;
             this.lblNombrePersonnes.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNombrePersonnes.Location = new System.Drawing.Point(34, 154);
+            this.lblNombrePersonnes.Location = new System.Drawing.Point(33, 360);
             this.lblNombrePersonnes.Name = "lblNombrePersonnes";
             this.lblNombrePersonnes.Size = new System.Drawing.Size(175, 20);
             this.lblNombrePersonnes.TabIndex = 37;
@@ -203,6 +213,7 @@
             this.cbReservationHour.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbReservationHour.FormattingEnabled = true;
             this.cbReservationHour.Items.AddRange(new object[] {
+            "",
             "12:00",
             "12:30",
             "13:00",
@@ -220,25 +231,26 @@
             "19:00",
             "19:30",
             "20:00"});
-            this.cbReservationHour.Location = new System.Drawing.Point(220, 332);
+            this.cbReservationHour.Location = new System.Drawing.Point(221, 190);
             this.cbReservationHour.Name = "cbReservationHour";
-            this.cbReservationHour.Size = new System.Drawing.Size(226, 28);
+            this.cbReservationHour.Size = new System.Drawing.Size(225, 28);
             this.cbReservationHour.TabIndex = 36;
             // 
             // txtNomReservation
             // 
             this.txtNomReservation.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNomReservation.Location = new System.Drawing.Point(220, 218);
+            this.txtNomReservation.Location = new System.Drawing.Point(220, 275);
             this.txtNomReservation.Name = "txtNomReservation";
             this.txtNomReservation.Size = new System.Drawing.Size(227, 27);
             this.txtNomReservation.TabIndex = 35;
+            this.txtNomReservation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblReservationHour
             // 
             this.lblReservationHour.AutoSize = true;
             this.lblReservationHour.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblReservationHour.ForeColor = System.Drawing.Color.Black;
-            this.lblReservationHour.Location = new System.Drawing.Point(21, 335);
+            this.lblReservationHour.Location = new System.Drawing.Point(22, 193);
             this.lblReservationHour.Name = "lblReservationHour";
             this.lblReservationHour.Size = new System.Drawing.Size(186, 20);
             this.lblReservationHour.TabIndex = 33;
@@ -249,7 +261,7 @@
             this.lblReservationDate.AutoSize = true;
             this.lblReservationDate.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblReservationDate.ForeColor = System.Drawing.Color.Black;
-            this.lblReservationDate.Location = new System.Drawing.Point(31, 290);
+            this.lblReservationDate.Location = new System.Drawing.Point(31, 152);
             this.lblReservationDate.Name = "lblReservationDate";
             this.lblReservationDate.Size = new System.Drawing.Size(177, 20);
             this.lblReservationDate.TabIndex = 32;
@@ -260,7 +272,7 @@
             this.lblNomReservation.AutoSize = true;
             this.lblNomReservation.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNomReservation.ForeColor = System.Drawing.Color.Black;
-            this.lblNomReservation.Location = new System.Drawing.Point(28, 221);
+            this.lblNomReservation.Location = new System.Drawing.Point(28, 278);
             this.lblNomReservation.Name = "lblNomReservation";
             this.lblNomReservation.Size = new System.Drawing.Size(180, 20);
             this.lblNomReservation.TabIndex = 31;
@@ -277,16 +289,29 @@
             // 
             // dtpDateReservation
             // 
-            this.dtpDateReservation.Location = new System.Drawing.Point(221, 290);
+            this.dtpDateReservation.Location = new System.Drawing.Point(221, 152);
             this.dtpDateReservation.Name = "dtpDateReservation";
-            this.dtpDateReservation.Size = new System.Drawing.Size(227, 23);
+            this.dtpDateReservation.Size = new System.Drawing.Size(226, 23);
             this.dtpDateReservation.TabIndex = 55;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Enabled = false;
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm.Location = new System.Drawing.Point(642, 221);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(117, 33);
+            this.btnConfirm.TabIndex = 56;
+            this.btnConfirm.Text = "Confirmer";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // UtilisationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 413);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.dtpDateReservation);
             this.Controls.Add(this.cbUtilisationList);
             this.Controls.Add(this.LblTablesUsed);
@@ -338,5 +363,6 @@
         private Label lblNomReservation;
         private ComboBox cbUtilisationList;
         private DateTimePicker dtpDateReservation;
+        private Button btnConfirm;
     }
 }

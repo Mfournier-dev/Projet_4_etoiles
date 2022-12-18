@@ -23,13 +23,21 @@ namespace Projet_4_etoiles.Business.Services
             return this.utilisationDAO.GetAll();
         }
 
-        public UtilisationDTO CreateReservation(int nombreClients, int idTable, string? nomReservation, string? numeroTelephone, DateTime dateReservation, DateTime heurereservation)
+        public UtilisationDTO CreateUtilisation(int nombreClients, int idTable, DateTime dateReservation, DateTime heurereservation, string? nomReservation, string? numeroTelephone)
         {
             UtilisationDTO utilisation = new UtilisationDTO(nombreClients, idTable, dateReservation, heurereservation, nomReservation, numeroTelephone);
             this.utilisationDAO.Create(utilisation);
             return utilisation;
         }
 
+        public UtilisationDTO ModifyUtilisation(UtilisationDTO utilisation)
+        {
+            return this.utilisationDAO.Update(utilisation);
+        }
 
+        public UtilisationDTO DeleteUtilisation(UtilisationDTO utilisation) 
+        {
+            return this.utilisationDAO.Delete(utilisation);
+        }
     }
 }

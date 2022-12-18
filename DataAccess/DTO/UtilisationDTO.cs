@@ -47,8 +47,8 @@ namespace Projet_4_etoiles.DataAccess.DTO
 
         public UtilisationDTO(int nombreClients,
                               int idTable,
-                              DateTime heureReservation,
                               DateTime dateReservation,
+                              DateTime heureReservation,
                               string? nomReservation = null,
                               string? numeroTelephone = null)
         {
