@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.comboBoxTableCommande = new System.Windows.Forms.ComboBox();
-            this.lblNumeroTable = new System.Windows.Forms.Label();
+            this.lblNumeroCommande = new System.Windows.Forms.Label();
             this.groupBoxCommande = new System.Windows.Forms.GroupBox();
+            this.lblNumeroTableValue = new System.Windows.Forms.Label();
+            this.lblNumeroTable = new System.Windows.Forms.Label();
             this.lblNombreClientsValue = new System.Windows.Forms.Label();
             this.lblNombreClients = new System.Windows.Forms.Label();
             this.lblPrix = new System.Windows.Forms.Label();
@@ -50,24 +52,26 @@
             // comboBoxTableCommande
             // 
             this.comboBoxTableCommande.FormattingEnabled = true;
-            this.comboBoxTableCommande.Location = new System.Drawing.Point(120, 20);
+            this.comboBoxTableCommande.Location = new System.Drawing.Point(160, 20);
             this.comboBoxTableCommande.Name = "comboBoxTableCommande";
             this.comboBoxTableCommande.Size = new System.Drawing.Size(61, 28);
             this.comboBoxTableCommande.TabIndex = 0;
             this.comboBoxTableCommande.SelectedIndexChanged += new System.EventHandler(this.comboBoxTableCommande_SelectedIndexChanged);
             // 
-            // lblNumeroTable
+            // lblNumeroCommande
             // 
-            this.lblNumeroTable.AutoSize = true;
-            this.lblNumeroTable.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblNumeroTable.Location = new System.Drawing.Point(48, 23);
-            this.lblNumeroTable.Name = "lblNumeroTable";
-            this.lblNumeroTable.Size = new System.Drawing.Size(63, 20);
-            this.lblNumeroTable.TabIndex = 1;
-            this.lblNumeroTable.Text = "# Table:";
+            this.lblNumeroCommande.AutoSize = true;
+            this.lblNumeroCommande.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNumeroCommande.Location = new System.Drawing.Point(48, 23);
+            this.lblNumeroCommande.Name = "lblNumeroCommande";
+            this.lblNumeroCommande.Size = new System.Drawing.Size(106, 20);
+            this.lblNumeroCommande.TabIndex = 1;
+            this.lblNumeroCommande.Text = "# Commande:";
             // 
             // groupBoxCommande
             // 
+            this.groupBoxCommande.Controls.Add(this.lblNumeroTableValue);
+            this.groupBoxCommande.Controls.Add(this.lblNumeroTable);
             this.groupBoxCommande.Controls.Add(this.lblNombreClientsValue);
             this.groupBoxCommande.Controls.Add(this.lblNombreClients);
             this.groupBoxCommande.Controls.Add(this.lblPrix);
@@ -84,10 +88,28 @@
             this.groupBoxCommande.TabStop = false;
             this.groupBoxCommande.Text = "Commande";
             // 
+            // lblNumeroTableValue
+            // 
+            this.lblNumeroTableValue.AutoSize = true;
+            this.lblNumeroTableValue.Location = new System.Drawing.Point(443, 39);
+            this.lblNumeroTableValue.Name = "lblNumeroTableValue";
+            this.lblNumeroTableValue.Size = new System.Drawing.Size(88, 20);
+            this.lblNumeroTableValue.TabIndex = 11;
+            this.lblNumeroTableValue.Text = "placeholder";
+            // 
+            // lblNumeroTable
+            // 
+            this.lblNumeroTable.AutoSize = true;
+            this.lblNumeroTable.Location = new System.Drawing.Point(313, 39);
+            this.lblNumeroTable.Name = "lblNumeroTable";
+            this.lblNumeroTable.Size = new System.Drawing.Size(125, 20);
+            this.lblNumeroTable.TabIndex = 10;
+            this.lblNumeroTable.Text = "Numero de table:";
+            // 
             // lblNombreClientsValue
             // 
             this.lblNombreClientsValue.AutoSize = true;
-            this.lblNombreClientsValue.Location = new System.Drawing.Point(191, 39);
+            this.lblNombreClientsValue.Location = new System.Drawing.Point(165, 39);
             this.lblNombreClientsValue.Name = "lblNombreClientsValue";
             this.lblNombreClientsValue.Size = new System.Drawing.Size(88, 20);
             this.lblNombreClientsValue.TabIndex = 9;
@@ -96,7 +118,7 @@
             // lblNombreClients
             // 
             this.lblNombreClients.AutoSize = true;
-            this.lblNombreClients.Location = new System.Drawing.Point(53, 38);
+            this.lblNombreClients.Location = new System.Drawing.Point(21, 39);
             this.lblNombreClients.Name = "lblNombreClients";
             this.lblNombreClients.Size = new System.Drawing.Size(138, 20);
             this.lblNombreClients.TabIndex = 8;
@@ -154,6 +176,7 @@
             this.listViewCommande.TabIndex = 3;
             this.listViewCommande.UseCompatibleStateImageBehavior = false;
             this.listViewCommande.View = System.Windows.Forms.View.List;
+            this.listViewCommande.SelectedIndexChanged += new System.EventHandler(this.listViewCommande_SelectedIndexChanged);
             // 
             // colonneArticle
             // 
@@ -212,7 +235,7 @@
             this.Controls.Add(this.btnPayer);
             this.Controls.Add(this.btnRetourMenu);
             this.Controls.Add(this.groupBoxCommande);
-            this.Controls.Add(this.lblNumeroTable);
+            this.Controls.Add(this.lblNumeroCommande);
             this.Controls.Add(this.comboBoxTableCommande);
             this.Name = "CommandesForm";
             this.Text = "Commande";
@@ -226,7 +249,7 @@
         #endregion
 
         private ComboBox comboBoxTableCommande;
-        private Label lblNumeroTable;
+        private Label lblNumeroCommande;
         private GroupBox groupBoxCommande;
         private ListView listViewCommande;
         private ColumnHeader colonneArticle;
@@ -241,5 +264,7 @@
         private Button btnPayer;
         private Label lblNombreClientsValue;
         private Label lblNombreClients;
+        private Label lblNumeroTableValue;
+        private Label lblNumeroTable;
     }
 }
