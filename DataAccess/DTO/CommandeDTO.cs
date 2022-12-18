@@ -23,9 +23,8 @@ public class CommandeDTO : IDTO
     [Column("NombreClients")]   
     public int NombreClients { get; set; }
 
-    [Column("NombreArticles")]
-    [Required]
-    public int NombreArticles { get; set; }
+    
+   
 
     public List<CommandesArticlesDTO> ArticlesCommandes { get; set; }
 
@@ -39,10 +38,10 @@ public class CommandeDTO : IDTO
     /// <param name="nombreClients"></param>
     /// <param name="nombreArticles"></param>
 
-    public CommandeDTO(int idTable,int nombreClients,int nombreArticles)
+    public CommandeDTO(int idTable,int nombreClients)
     {
         this.IdTable = idTable;
         this.NombreClients = nombreClients;
-        this.NombreArticles = nombreArticles;
+        
     }
 }

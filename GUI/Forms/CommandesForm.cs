@@ -18,6 +18,7 @@ namespace Projet_4_etoiles.GUI.Forms
     public partial class CommandesForm : Form
     {
         private CommandeDTO? currentSelectedCommande;
+        private MenuDTO selectedArticle;
         private ProjectContext projectContext;
         public CommandesForm()
         {
@@ -28,7 +29,7 @@ namespace Projet_4_etoiles.GUI.Forms
 
         public void Init() 
         {
-            this.comboBoxTableCommande.DisplayMember ="IdTable";
+            this.comboBoxTableCommande.DisplayMember ="IdCommande";
             this.comboBoxTableCommande.ValueMember = "IdCommande";
           //  this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
         
@@ -37,6 +38,8 @@ namespace Projet_4_etoiles.GUI.Forms
         public void OpenCommandeWindow() 
         {
             this.lblPrix.Text = "$";
+            this.lblNombreClientsValue.Text = "";
+            this.lblNumeroTableValue.Text = "";
             this.listViewCommande.Items.Clear();
             this.DialogResult = DialogResult.None;
             this.ShowDialog();
@@ -55,14 +58,17 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void LoadCommandeFields(CommandeDTO commande) 
         {
-            this.lblNumeroTable.Text = commande.IdTable.ToString();
+            
             this.lblNombreClientsValue.Text = commande.NombreClients.ToString();
+            this.lblNumeroTableValue.Text = commande.IdTable.ToString();
             List<MenuDTO> articles = MainService.GetInstance().GetCommandesArticlesService().GetAllArticlesForCommande(commande.IdCommande);
             foreach(MenuDTO article in articles) 
             { 
             
                 this.AddArticleToListView(article);
+                this.lblPrix.Text += article.Price.ToString();
             }
+            
         
         }
 
@@ -94,9 +100,34 @@ namespace Projet_4_etoiles.GUI.Forms
 
             if (this.currentSelectedCommande is not null) 
             {
+                
                 List<MenuDTO> articlesInCommande = MainService.GetInstance().GetCommandesArticlesService().GetAllArticlesForCommande(this.currentSelectedCommande.IdCommande);
-
+                MenuDTO selectedArticle = this.GetSelectedArticle();
+                MainService.GetInstance().GetCommandesArticlesService().DeleteCommandeArticleLink(this.currentSelectedCommande.IdCommande, selectedArticle.Id);
+                this.RemoveArticleFromListView(selectedArticle);
             }
+        }
+
+        public MenuDTO GetSelectedArticle() 
+        {
+            return this.selectedArticle;
+        }
+
+        private void RemoveArticleFromListView(MenuDTO article) 
+        { 
+            foreach(ListViewItem lvItem in this.listViewCommande.Items) 
+            { 
+                if(((int)lvItem.Tag) == article.Id) 
+                {
+                    this.listViewCommande.Items.Remove(lvItem);
+                }
+            
+            } 
+        }
+
+        private void listViewCommande_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSupprimerArticle.Enabled = true;
         }
     }
 }
