@@ -43,7 +43,7 @@ namespace Projet_4_etoiles.GUI.Forms
                 int.Parse(this.txtNbPersonnes.Text)
 
                 );
-
+            MessageBox.Show("Commande crée.");
             this.DialogResult = DialogResult.OK;
         }
 

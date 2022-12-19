@@ -28,6 +28,7 @@ namespace Projet_4_etoiles.GUI.Forms
             this.projectContext = new ProjectContext();
             this.menuForm = new MenuForm();
             this.createCommandModal = new CreateCommandModal();
+            
             Init();
         }
 
@@ -65,12 +66,13 @@ namespace Projet_4_etoiles.GUI.Forms
             
             this.lblNombreClientsValue.Text = commande.NombreClients.ToString();
             this.lblNumeroTableValue.Text = commande.IdTable.ToString();
+            
             List<MenuDTO> articles = MainService.GetInstance().GetCommandesArticlesService().GetAllArticlesForCommande(commande.IdCommande);
             foreach(MenuDTO article in articles) 
             { 
             
                 this.AddArticleToListView(article);
-                
+                //lblPrix.Text += article.Price.ToString();
             }
             
         
@@ -106,9 +108,9 @@ namespace Projet_4_etoiles.GUI.Forms
 
             if (this.currentSelectedCommande is not null) 
             {
-                
-                List<MenuDTO> articlesInCommande = MainService.GetInstance().GetCommandesArticlesService().GetAllArticlesForCommande(this.currentSelectedCommande.IdCommande);
-                MenuDTO selectedArticle = this.GetSelectedArticle();
+
+                //List<MenuDTO> articlesInCommande = MainService.GetInstance().GetCommandesArticlesService().GetAllArticlesForCommande(this.currentSelectedCommande.IdCommande);
+                this.selectedArticle = (MenuDTO)this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
                 MainService.GetInstance().GetCommandesArticlesService().DeleteCommandeArticleLink(this.currentSelectedCommande.IdCommande, selectedArticle.Id);
                 this.RemoveArticleFromListView(selectedArticle);
             }
@@ -133,7 +135,9 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void listViewCommande_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             btnSupprimerArticle.Enabled = true;
+            btnModifierQuantite.Enabled = true;
         }
 
         private void btnAfficherMenu_Click(object sender, EventArgs e)

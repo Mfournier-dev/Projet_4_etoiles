@@ -157,6 +157,7 @@
             // 
             // btnModifierQuantite
             // 
+            this.btnModifierQuantite.Enabled = false;
             this.btnModifierQuantite.Location = new System.Drawing.Point(345, 216);
             this.btnModifierQuantite.Name = "btnModifierQuantite";
             this.btnModifierQuantite.Size = new System.Drawing.Size(178, 29);
