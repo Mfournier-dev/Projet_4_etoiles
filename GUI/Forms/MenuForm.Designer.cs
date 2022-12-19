@@ -43,6 +43,9 @@
             this.btnSupprimerItem = new System.Windows.Forms.Button();
             this.txtQuantite = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btnShowId = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAjouter
@@ -194,11 +197,44 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Quant:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(741, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 25);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "ID:";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblID.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblID.Location = new System.Drawing.Point(781, 149);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(164, 30);
+            this.lblID.TabIndex = 24;
+            this.lblID.Text = "ID Placeholder";
+            // 
+            // btnShowId
+            // 
+            this.btnShowId.Location = new System.Drawing.Point(782, 104);
+            this.btnShowId.Name = "btnShowId";
+            this.btnShowId.Size = new System.Drawing.Size(112, 34);
+            this.btnShowId.TabIndex = 25;
+            this.btnShowId.Text = "Show Id";
+            this.btnShowId.UseVisualStyleBackColor = true;
+            this.btnShowId.Click += new System.EventHandler(this.btnShowId_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 625);
+            this.ClientSize = new System.Drawing.Size(947, 625);
+            this.Controls.Add(this.btnShowId);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtQuantite);
             this.Controls.Add(this.btnSupprimerItem);
@@ -237,5 +273,8 @@
         private Button btnSupprimerItem;
         private TextBox txtQuantite;
         private Label label2;
+        private Label label3;
+        private Label lblID;
+        private Button btnShowId;
     }
 }

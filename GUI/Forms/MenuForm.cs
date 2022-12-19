@@ -64,6 +64,7 @@ namespace Projet_4_etoiles.GUI.Forms
         private void comboBoxCommandeId_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.currentSelectedCommande = (CommandeDTO) this.comboBoxCommandeId.Items[this.comboBoxCommandeId.SelectedIndex];
+           
         }
 
         private void btnCreateItem_Click(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace Projet_4_etoiles.GUI.Forms
                 }
                 else { MessageBox.Show("Aucune categorie a ete choisi."); }
 
+                this.lblID.Text = createdItem.Id.ToString();
             }
 
         }
@@ -108,7 +110,15 @@ namespace Projet_4_etoiles.GUI.Forms
                 this.comboBoxCommandeId.Items.Add(commande);
             }
         }
-
+        private void btnShowId_Click(object sender, EventArgs e)
+        {
+            List<MenuDTO> items = MainService.GetInstance().GetMenuService().GetAll();
+            foreach (MenuDTO item in items)
+            {
+                item.Equals(this.currentSelectedItem);
+                this.lblID.Text = item.Id.ToString();
+            }
+        }
         public void ClearDetailsFields()
         {
             this.liPlatPrincipaux.Items.Clear();
@@ -155,6 +165,7 @@ namespace Projet_4_etoiles.GUI.Forms
             this.DialogResult = DialogResult.OK;
         }
 
+        
     }
 
 }
