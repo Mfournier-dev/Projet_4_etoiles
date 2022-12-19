@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Crée par Karine
 namespace Projet_4_etoiles.Business.Services
 {
     public class CommandesArticlesService
@@ -22,7 +22,7 @@ namespace Projet_4_etoiles.Business.Services
         {
             return this.commandesArticlesDAO.GetAllArticlesForCommande(commandeId);
         }
-        
+
         public CommandesArticlesDTO CreateNewCommandeArticleLink( int articleId, int commandeId, int quantite) 
         {
             CommandesArticlesDTO commandeArticlesDTO = new CommandesArticlesDTO(articleId,commandeId, quantite);

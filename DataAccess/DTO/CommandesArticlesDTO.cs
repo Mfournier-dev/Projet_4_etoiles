@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//Crée par Karine
 namespace Projet_4_etoiles.DataAccess.DTO;
 
 [Table("T_CommandesArticles")]   
