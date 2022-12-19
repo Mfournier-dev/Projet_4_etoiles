@@ -9,7 +9,6 @@ namespace Projet_4_etoiles
     public partial class MainForm : Form
     {
         private UtilisationForm uForm;
-        private MenuForm mForm;
         private MenuDTO menuDTO;
         private CommandesForm commandeForm;
         private ViewIntent viewInt;
@@ -18,7 +17,6 @@ namespace Projet_4_etoiles
             InitializeComponent();
             this.uForm = new UtilisationForm();
             this.commandeForm = new CommandesForm();
-            this.mForm = new MenuForm();
             this.viewInt = new ViewIntent();
         }
 
@@ -27,10 +25,6 @@ namespace Projet_4_etoiles
             uForm.OpenWindow();
         }
 
-        private void btnOpenMenu_Click(object sender, EventArgs e)
-        {
-            mForm.OpenMenuForm();
-        }
 
         private void btnVoirCommandes_Click(object sender, EventArgs e)
         {
