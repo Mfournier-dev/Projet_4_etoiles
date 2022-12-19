@@ -41,13 +41,15 @@
             this.comboBoxCommandeId = new System.Windows.Forms.ComboBox();
             this.btnCreateItem = new System.Windows.Forms.Button();
             this.btnSupprimerItem = new System.Windows.Forms.Button();
+            this.txtQuantite = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAjouter
             // 
             this.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAjouter.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAjouter.Location = new System.Drawing.Point(390, 531);
+            this.btnAjouter.Location = new System.Drawing.Point(504, 522);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(242, 82);
             this.btnAjouter.TabIndex = 4;
@@ -59,9 +61,9 @@
             // 
             this.btnFermeture.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFermeture.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFermeture.Location = new System.Drawing.Point(733, 541);
+            this.btnFermeture.Location = new System.Drawing.Point(759, 531);
             this.btnFermeture.Name = "btnFermeture";
-            this.btnFermeture.Size = new System.Drawing.Size(186, 72);
+            this.btnFermeture.Size = new System.Drawing.Size(158, 71);
             this.btnFermeture.TabIndex = 5;
             this.btnFermeture.Text = "Fermer La Fenetre";
             this.btnFermeture.UseVisualStyleBackColor = true;
@@ -148,7 +150,7 @@
             this.comboBoxCommandeId.FormattingEnabled = true;
             this.comboBoxCommandeId.Location = new System.Drawing.Point(145, 531);
             this.comboBoxCommandeId.Name = "comboBoxCommandeId";
-            this.comboBoxCommandeId.Size = new System.Drawing.Size(214, 33);
+            this.comboBoxCommandeId.Size = new System.Drawing.Size(179, 33);
             this.comboBoxCommandeId.TabIndex = 18;
             this.comboBoxCommandeId.SelectedIndexChanged += new System.EventHandler(this.comboBoxCommandeId_SelectedIndexChanged);
             // 
@@ -176,11 +178,29 @@
             this.btnSupprimerItem.UseVisualStyleBackColor = true;
             this.btnSupprimerItem.Click += new System.EventHandler(this.btnSupprimerItem_Click);
             // 
+            // txtQuantite
+            // 
+            this.txtQuantite.Location = new System.Drawing.Point(420, 536);
+            this.txtQuantite.Name = "txtQuantite";
+            this.txtQuantite.Size = new System.Drawing.Size(68, 31);
+            this.txtQuantite.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(349, 536);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 25);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Quant:";
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 625);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtQuantite);
             this.Controls.Add(this.btnSupprimerItem);
             this.Controls.Add(this.btnCreateItem);
             this.Controls.Add(this.comboBoxCommandeId);
@@ -215,5 +235,7 @@
         private ComboBox comboBoxCommandeId;
         private Button btnCreateItem;
         private Button btnSupprimerItem;
+        private TextBox txtQuantite;
+        private Label label2;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Projet_4_etoiles.Business.Services;
+﻿using Microsoft.VisualBasic.Devices;
+using Projet_4_etoiles.Business.Services;
 using Projet_4_etoiles.DataAccess.Context;
 using Projet_4_etoiles.DataAccess.DTO;
 using System;
@@ -19,6 +20,8 @@ namespace Projet_4_etoiles.GUI.Forms
         private MenuDTO? currentSelectedItem;
         private CreateItem createNewItem;
         private CommandeDTO commandeDTO;
+        private CommandesArticlesDTO comArtDTO;
+        private MenuDTO menuDTO;
         public MenuForm()
         {
             InitializeComponent();
@@ -31,27 +34,6 @@ namespace Projet_4_etoiles.GUI.Forms
             this.comboBoxCommandeId.DisplayMember = "IdCommande";
             this.comboBoxCommandeId.ValueMember = "Id";
             this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
-        }
-
-
-        private void AddItemToListView(MenuDTO item)
-        {
-            ListViewItem lvItem = new(item.Name);
-            lvItem.Tag = item.Category;
-
-            if (item.Category == "Plats principaux")
-            {
-                this.liPlatPrincipaux.Items.Add(lvItem);
-            }
-            if (item.Category == "Desserts")
-            {
-                this.liDesserts.Items.Add(lvItem);
-            }
-            if (item.Category == "Breuvages")
-            {
-                this.liBreuvages.Items.Add(lvItem);
-            }
-            
         }
 
         private void RemoveItemFromListView(MenuDTO item)
@@ -136,11 +118,34 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+            this.comArtDTO = MainService.GetInstance().GetCommandesArticlesService().CreateNewCommandeArticleLink(
+                (int)menuDTO.Id,
+                int.Parse(this.comboBoxCommandeId.Text),
+                int.Parse(this.txtQuantite.Text)
+                );
 
+            this.DialogResult = DialogResult.OK;
         }
 
         public void OpenMenuForm()
         {
+            List<MenuDTO> items = MainService.GetInstance().GetMenuService().GetAll();
+            foreach (MenuDTO item in items)
+            {
+                if (item.Category.Contains("Plats principaux"))
+                {
+                    this.liPlatPrincipaux.Items.Add(item.Name);
+                }
+                else if (item.Category.Contains("Desserts"))
+                {
+                    this.liDesserts.Items.Add(item.Name);
+                }
+                else
+                {
+                    this.liBreuvages.Items.Add(item.Name);
+                }
+            }
+           
             this.DialogResult = DialogResult.None;
             this.ShowDialog();
         }

@@ -38,10 +38,11 @@ public class CommandesArticlesDTO : IDTO
     { 
     
     }
-    public CommandesArticlesDTO(int articleId, int commandeId) 
+    public CommandesArticlesDTO(int articleId, int commandeId, int quantite) 
     {
         this.IdArticle = articleId;
         this.IdCommande = commandeId;
+        this.Quantite = quantite;
                   
     }
 }

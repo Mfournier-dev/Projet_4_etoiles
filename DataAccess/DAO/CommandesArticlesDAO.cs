@@ -34,13 +34,13 @@ namespace Projet_4_etoiles.DataAccess.DAO
             return commandeArticle;
         }
 
-        //public CommandesArticlesDTO Update(CommandesArticlesDTO commande)
-        //{
-        //    //TODO: Retravailler delete, pour que seul un article est updaté de la commande, pas la commande au complet.
-        //    this._projectContext.CommandesArticles.Update(commande);
-        //    this._projectContext.SaveChanges();
-        //    return commande;
-        //}
+        public CommandesArticlesDTO Update(CommandesArticlesDTO commande)
+        {
+            //TODO: Retravailler delete, pour que seul un article est updaté de la commande, pas la commande au complet.
+            this.context.CommandesArticles.Update(commande);
+            this.context.SaveChanges();
+            return commande;
+        }
 
         public CommandesArticlesDTO Delete(CommandesArticlesDTO commande)
         {

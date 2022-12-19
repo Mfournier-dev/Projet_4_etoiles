@@ -44,4 +44,9 @@ public class CommandeDTO : IDTO
         this.NombreClients = nombreClients;
         
     }
+
+    public int GetId()
+    {
+        return this.IdCommande;
+    }
 }

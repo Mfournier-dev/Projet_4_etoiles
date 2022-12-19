@@ -42,10 +42,10 @@
             this.listViewCommande = new System.Windows.Forms.ListView();
             this.colonneArticle = new System.Windows.Forms.ColumnHeader();
             this.colonneQuantite = new System.Windows.Forms.ColumnHeader();
-            this.btnAjouterArticle = new System.Windows.Forms.Button();
+            this.btnAfficherMenu = new System.Windows.Forms.Button();
             this.btnSupprimerArticle = new System.Windows.Forms.Button();
             this.btnRetourMenu = new System.Windows.Forms.Button();
-            this.btnPayer = new System.Windows.Forms.Button();
+            this.btnCreateCommande = new System.Windows.Forms.Button();
             this.groupBoxCommande.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             this.groupBoxCommande.Controls.Add(this.btnSauvegarderModification);
             this.groupBoxCommande.Controls.Add(this.btnModifierQuantite);
             this.groupBoxCommande.Controls.Add(this.listViewCommande);
-            this.groupBoxCommande.Controls.Add(this.btnAjouterArticle);
+            this.groupBoxCommande.Controls.Add(this.btnAfficherMenu);
             this.groupBoxCommande.Controls.Add(this.btnSupprimerArticle);
             this.groupBoxCommande.Location = new System.Drawing.Point(48, 55);
             this.groupBoxCommande.Name = "groupBoxCommande";
@@ -188,14 +188,15 @@
             this.colonneQuantite.Text = "Quantité";
             this.colonneQuantite.Width = 100;
             // 
-            // btnAjouterArticle
+            // btnAfficherMenu
             // 
-            this.btnAjouterArticle.Location = new System.Drawing.Point(345, 168);
-            this.btnAjouterArticle.Name = "btnAjouterArticle";
-            this.btnAjouterArticle.Size = new System.Drawing.Size(178, 29);
-            this.btnAjouterArticle.TabIndex = 2;
-            this.btnAjouterArticle.Text = "Ajouter Articles";
-            this.btnAjouterArticle.UseVisualStyleBackColor = true;
+            this.btnAfficherMenu.Location = new System.Drawing.Point(345, 168);
+            this.btnAfficherMenu.Name = "btnAfficherMenu";
+            this.btnAfficherMenu.Size = new System.Drawing.Size(178, 29);
+            this.btnAfficherMenu.TabIndex = 2;
+            this.btnAfficherMenu.Text = "Afficher Menu";
+            this.btnAfficherMenu.UseVisualStyleBackColor = true;
+            this.btnAfficherMenu.Click += new System.EventHandler(this.btnAfficherMenu_Click);
             // 
             // btnSupprimerArticle
             // 
@@ -210,7 +211,7 @@
             // 
             // btnRetourMenu
             // 
-            this.btnRetourMenu.Location = new System.Drawing.Point(610, 207);
+            this.btnRetourMenu.Location = new System.Drawing.Point(610, 280);
             this.btnRetourMenu.Name = "btnRetourMenu";
             this.btnRetourMenu.Size = new System.Drawing.Size(178, 50);
             this.btnRetourMenu.TabIndex = 6;
@@ -218,21 +219,22 @@
             this.btnRetourMenu.UseVisualStyleBackColor = true;
             this.btnRetourMenu.Click += new System.EventHandler(this.btnRetourMenu_Click);
             // 
-            // btnPayer
+            // btnCreateCommande
             // 
-            this.btnPayer.Location = new System.Drawing.Point(610, 277);
-            this.btnPayer.Name = "btnPayer";
-            this.btnPayer.Size = new System.Drawing.Size(178, 52);
-            this.btnPayer.TabIndex = 7;
-            this.btnPayer.Text = "Payer Facture";
-            this.btnPayer.UseVisualStyleBackColor = true;
+            this.btnCreateCommande.Location = new System.Drawing.Point(610, 202);
+            this.btnCreateCommande.Name = "btnCreateCommande";
+            this.btnCreateCommande.Size = new System.Drawing.Size(178, 50);
+            this.btnCreateCommande.TabIndex = 8;
+            this.btnCreateCommande.Text = "Creer une nouvelle commande";
+            this.btnCreateCommande.UseVisualStyleBackColor = true;
+            this.btnCreateCommande.Click += new System.EventHandler(this.btnCreateCommande_Click);
             // 
             // CommandesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 562);
-            this.Controls.Add(this.btnPayer);
+            this.Controls.Add(this.btnCreateCommande);
             this.Controls.Add(this.btnRetourMenu);
             this.Controls.Add(this.groupBoxCommande);
             this.Controls.Add(this.lblNumeroCommande);
@@ -253,7 +255,7 @@
         private GroupBox groupBoxCommande;
         private ListView listViewCommande;
         private ColumnHeader colonneArticle;
-        private Button btnAjouterArticle;
+        private Button btnAfficherMenu;
         private Button btnSupprimerArticle;
         private ColumnHeader colonneQuantite;
         private Button btnSauvegarderModification;
@@ -261,10 +263,10 @@
         private Button btnRetourMenu;
         private Label lblPrix;
         private Label lblTotal;
-        private Button btnPayer;
         private Label lblNombreClientsValue;
         private Label lblNombreClients;
         private Label lblNumeroTableValue;
         private Label lblNumeroTable;
+        private Button btnCreateCommande;
     }
 }

@@ -20,10 +20,14 @@ namespace Projet_4_etoiles.GUI.Forms
         private CommandeDTO? currentSelectedCommande;
         private MenuDTO selectedArticle;
         private ProjectContext projectContext;
+        private MenuForm menuForm;
+        private CreateCommandModal createCommandModal;
         public CommandesForm()
         {
             InitializeComponent();
             this.projectContext = new ProjectContext();
+            this.menuForm = new MenuForm();
+            this.createCommandModal = new CreateCommandModal();
             Init();
         }
 
@@ -31,7 +35,7 @@ namespace Projet_4_etoiles.GUI.Forms
         {
             this.comboBoxTableCommande.DisplayMember ="IdCommande";
             this.comboBoxTableCommande.ValueMember = "IdCommande";
-          //  this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
+            this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
         
         }
 
@@ -84,8 +88,7 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void btnRetourMenu_Click(object sender, EventArgs e)
         {
-            this.currentSelectedCommande = (CommandeDTO)this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
-            this.LoadCommandeFields(this.currentSelectedCommande);
+            this.DialogResult = DialogResult.OK;
         }
 
         private void comboBoxTableCommande_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,6 +131,22 @@ namespace Projet_4_etoiles.GUI.Forms
         private void listViewCommande_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnSupprimerArticle.Enabled = true;
+        }
+
+        private void btnAfficherMenu_Click(object sender, EventArgs e)
+        {
+            this.menuForm.OpenMenuForm();
+        }
+
+        private void btnCreateCommande_Click(object sender, EventArgs e)
+        {
+            this.createCommandModal.OpenModal();
+            if(this.createCommandModal.DialogResult == DialogResult.OK) 
+            {
+                CommandeDTO createdCommande = this.createCommandModal.GetCreatedCommande();
+                this.comboBoxTableCommande.Items.Add(createdCommande);
+                this.comboBoxTableCommande.SelectedItem = createdCommande;
+            }
         }
     }
 }
