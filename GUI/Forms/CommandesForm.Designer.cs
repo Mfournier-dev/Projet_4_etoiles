@@ -62,15 +62,16 @@
             // lblNumeroCommande
             // 
             this.lblNumeroCommande.AutoSize = true;
-            this.lblNumeroCommande.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNumeroCommande.Font = new System.Drawing.Font("Pristina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNumeroCommande.Location = new System.Drawing.Point(48, 23);
             this.lblNumeroCommande.Name = "lblNumeroCommande";
-            this.lblNumeroCommande.Size = new System.Drawing.Size(106, 20);
+            this.lblNumeroCommande.Size = new System.Drawing.Size(114, 27);
             this.lblNumeroCommande.TabIndex = 1;
             this.lblNumeroCommande.Text = "# Commande:";
             // 
             // groupBoxCommande
             // 
+            this.groupBoxCommande.BackColor = System.Drawing.Color.Black;
             this.groupBoxCommande.Controls.Add(this.lblNumeroTableValue);
             this.groupBoxCommande.Controls.Add(this.lblNumeroTable);
             this.groupBoxCommande.Controls.Add(this.lblNombreClientsValue);
@@ -82,6 +83,8 @@
             this.groupBoxCommande.Controls.Add(this.listViewCommande);
             this.groupBoxCommande.Controls.Add(this.btnAfficherMenu);
             this.groupBoxCommande.Controls.Add(this.btnSupprimerArticle);
+            this.groupBoxCommande.Font = new System.Drawing.Font("Pristina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBoxCommande.ForeColor = System.Drawing.Color.Gold;
             this.groupBoxCommande.Location = new System.Drawing.Point(48, 55);
             this.groupBoxCommande.Name = "groupBoxCommande";
             this.groupBoxCommande.Size = new System.Drawing.Size(546, 480);
@@ -94,7 +97,7 @@
             this.lblNumeroTableValue.AutoSize = true;
             this.lblNumeroTableValue.Location = new System.Drawing.Point(443, 39);
             this.lblNumeroTableValue.Name = "lblNumeroTableValue";
-            this.lblNumeroTableValue.Size = new System.Drawing.Size(88, 20);
+            this.lblNumeroTableValue.Size = new System.Drawing.Size(93, 27);
             this.lblNumeroTableValue.TabIndex = 11;
             this.lblNumeroTableValue.Text = "placeholder";
             // 
@@ -103,7 +106,7 @@
             this.lblNumeroTable.AutoSize = true;
             this.lblNumeroTable.Location = new System.Drawing.Point(313, 39);
             this.lblNumeroTable.Name = "lblNumeroTable";
-            this.lblNumeroTable.Size = new System.Drawing.Size(125, 20);
+            this.lblNumeroTable.Size = new System.Drawing.Size(137, 27);
             this.lblNumeroTable.TabIndex = 10;
             this.lblNumeroTable.Text = "Numero de table:";
             // 
@@ -112,7 +115,7 @@
             this.lblNombreClientsValue.AutoSize = true;
             this.lblNombreClientsValue.Location = new System.Drawing.Point(165, 39);
             this.lblNombreClientsValue.Name = "lblNombreClientsValue";
-            this.lblNombreClientsValue.Size = new System.Drawing.Size(88, 20);
+            this.lblNombreClientsValue.Size = new System.Drawing.Size(93, 27);
             this.lblNombreClientsValue.TabIndex = 9;
             this.lblNombreClientsValue.Text = "placeholder";
             // 
@@ -121,36 +124,37 @@
             this.lblNombreClients.AutoSize = true;
             this.lblNombreClients.Location = new System.Drawing.Point(21, 39);
             this.lblNombreClients.Name = "lblNombreClients";
-            this.lblNombreClients.Size = new System.Drawing.Size(138, 20);
+            this.lblNombreClients.Size = new System.Drawing.Size(150, 27);
             this.lblNombreClients.TabIndex = 8;
             this.lblNombreClients.Text = "Nombre de clients :";
             // 
             // lblPrix
             // 
             this.lblPrix.AutoSize = true;
-            this.lblPrix.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPrix.Font = new System.Drawing.Font("Pristina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPrix.Location = new System.Drawing.Point(444, 369);
             this.lblPrix.Name = "lblPrix";
-            this.lblPrix.Size = new System.Drawing.Size(49, 28);
+            this.lblPrix.Size = new System.Drawing.Size(50, 31);
             this.lblPrix.TabIndex = 7;
             this.lblPrix.Text = "Prix";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.Font = new System.Drawing.Font("Pristina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotal.Location = new System.Drawing.Point(362, 369);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(76, 28);
+            this.lblTotal.Size = new System.Drawing.Size(76, 31);
             this.lblTotal.TabIndex = 6;
             this.lblTotal.Text = "Total : ";
             // 
             // btnSauvegarderModification
             // 
             this.btnSauvegarderModification.Enabled = false;
+            this.btnSauvegarderModification.ForeColor = System.Drawing.Color.Black;
             this.btnSauvegarderModification.Location = new System.Drawing.Point(345, 263);
             this.btnSauvegarderModification.Name = "btnSauvegarderModification";
-            this.btnSauvegarderModification.Size = new System.Drawing.Size(178, 50);
+            this.btnSauvegarderModification.Size = new System.Drawing.Size(178, 66);
             this.btnSauvegarderModification.TabIndex = 5;
             this.btnSauvegarderModification.Text = "Sauvegarder les modifications";
             this.btnSauvegarderModification.UseVisualStyleBackColor = true;
@@ -158,7 +162,8 @@
             // btnModifierQuantite
             // 
             this.btnModifierQuantite.Enabled = false;
-            this.btnModifierQuantite.Location = new System.Drawing.Point(345, 216);
+            this.btnModifierQuantite.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnModifierQuantite.Location = new System.Drawing.Point(345, 221);
             this.btnModifierQuantite.Name = "btnModifierQuantite";
             this.btnModifierQuantite.Size = new System.Drawing.Size(178, 29);
             this.btnModifierQuantite.TabIndex = 4;
@@ -193,6 +198,7 @@
             // 
             // btnAfficherMenu
             // 
+            this.btnAfficherMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAfficherMenu.Location = new System.Drawing.Point(345, 168);
             this.btnAfficherMenu.Name = "btnAfficherMenu";
             this.btnAfficherMenu.Size = new System.Drawing.Size(178, 29);
@@ -204,9 +210,10 @@
             // btnSupprimerArticle
             // 
             this.btnSupprimerArticle.Enabled = false;
-            this.btnSupprimerArticle.Location = new System.Drawing.Point(345, 120);
+            this.btnSupprimerArticle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSupprimerArticle.Location = new System.Drawing.Point(345, 115);
             this.btnSupprimerArticle.Name = "btnSupprimerArticle";
-            this.btnSupprimerArticle.Size = new System.Drawing.Size(178, 29);
+            this.btnSupprimerArticle.Size = new System.Drawing.Size(178, 34);
             this.btnSupprimerArticle.TabIndex = 1;
             this.btnSupprimerArticle.Text = "Supprimer Article";
             this.btnSupprimerArticle.UseVisualStyleBackColor = true;
@@ -214,6 +221,7 @@
             // 
             // btnRetourMenu
             // 
+            this.btnRetourMenu.Font = new System.Drawing.Font("Pristina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnRetourMenu.Location = new System.Drawing.Point(610, 280);
             this.btnRetourMenu.Name = "btnRetourMenu";
             this.btnRetourMenu.Size = new System.Drawing.Size(178, 50);
@@ -224,6 +232,7 @@
             // 
             // btnCreateCommande
             // 
+            this.btnCreateCommande.Font = new System.Drawing.Font("Pristina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCreateCommande.Location = new System.Drawing.Point(610, 202);
             this.btnCreateCommande.Name = "btnCreateCommande";
             this.btnCreateCommande.Size = new System.Drawing.Size(178, 50);
@@ -234,6 +243,7 @@
             // 
             // btnSupprimerCommande
             // 
+            this.btnSupprimerCommande.Font = new System.Drawing.Font("Pristina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSupprimerCommande.Location = new System.Drawing.Point(610, 134);
             this.btnSupprimerCommande.Name = "btnSupprimerCommande";
             this.btnSupprimerCommande.Size = new System.Drawing.Size(178, 46);
@@ -246,6 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(800, 562);
             this.Controls.Add(this.btnSupprimerCommande);
             this.Controls.Add(this.btnCreateCommande);
@@ -253,6 +264,7 @@
             this.Controls.Add(this.groupBoxCommande);
             this.Controls.Add(this.lblNumeroCommande);
             this.Controls.Add(this.comboBoxTableCommande);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "CommandesForm";
             this.Text = "Commande";
             this.groupBoxCommande.ResumeLayout(false);

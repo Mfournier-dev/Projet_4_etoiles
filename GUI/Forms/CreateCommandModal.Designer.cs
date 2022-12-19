@@ -38,18 +38,20 @@
             // lblSelectTable
             // 
             this.lblSelectTable.AutoSize = true;
-            this.lblSelectTable.Location = new System.Drawing.Point(132, 83);
+            this.lblSelectTable.Font = new System.Drawing.Font("Pristina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSelectTable.Location = new System.Drawing.Point(108, 80);
             this.lblSelectTable.Name = "lblSelectTable";
-            this.lblSelectTable.Size = new System.Drawing.Size(94, 20);
+            this.lblSelectTable.Size = new System.Drawing.Size(118, 31);
             this.lblSelectTable.TabIndex = 0;
             this.lblSelectTable.Text = "Select table :";
             // 
             // lblNombrePersonnes
             // 
             this.lblNombrePersonnes.AutoSize = true;
+            this.lblNombrePersonnes.Font = new System.Drawing.Font("Pristina", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNombrePersonnes.Location = new System.Drawing.Point(80, 157);
             this.lblNombrePersonnes.Name = "lblNombrePersonnes";
-            this.lblNombrePersonnes.Size = new System.Drawing.Size(146, 20);
+            this.lblNombrePersonnes.Size = new System.Drawing.Size(180, 31);
             this.lblNombrePersonnes.TabIndex = 2;
             this.lblNombrePersonnes.Text = "Nombre personnes : ";
             // 
@@ -63,6 +65,7 @@
             // 
             // btnCreerCommande
             // 
+            this.btnCreerCommande.Font = new System.Drawing.Font("Pristina", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCreerCommande.Location = new System.Drawing.Point(174, 241);
             this.btnCreerCommande.Name = "btnCreerCommande";
             this.btnCreerCommande.Size = new System.Drawing.Size(146, 55);
@@ -95,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(487, 356);
             this.Controls.Add(this.comboBoxTableNumber);
             this.Controls.Add(this.btnCreerCommande);

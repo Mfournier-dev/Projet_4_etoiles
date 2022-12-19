@@ -36,7 +36,7 @@ public class TablesDAO : IDAO<TablesDTO>
 
 	public TablesDTO GetById(int id)
 	{
-		return this._context.Tables.Where(tables => tables.IdTable== id).Single();   // Lambda??
+		return this._context.Tables.Where(tables => tables.IdTable== id).Single();  
 	}
 
 	public TablesDTO CreateTable (TablesDTO newTable)
