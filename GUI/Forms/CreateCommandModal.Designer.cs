@@ -32,8 +32,7 @@
             this.lblNombrePersonnes = new System.Windows.Forms.Label();
             this.txtNbPersonnes = new System.Windows.Forms.TextBox();
             this.btnCreerCommande = new System.Windows.Forms.Button();
-            this.comboBoxTableNumber = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxTableNumber)).BeginInit();
+            this.comboBoxTableNumber = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblSelectTable
@@ -60,6 +59,7 @@
             this.txtNbPersonnes.Name = "txtNbPersonnes";
             this.txtNbPersonnes.Size = new System.Drawing.Size(151, 27);
             this.txtNbPersonnes.TabIndex = 3;
+            this.txtNbPersonnes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNbPersonnes_KeyPress);
             // 
             // btnCreerCommande
             // 
@@ -73,25 +73,23 @@
             // 
             // comboBoxTableNumber
             // 
-            this.comboBoxTableNumber.Location = new System.Drawing.Point(232, 81);
-            this.comboBoxTableNumber.Maximum = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
-            this.comboBoxTableNumber.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.comboBoxTableNumber.FormattingEnabled = true;
+            this.comboBoxTableNumber.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "12",
+            "13",
+            "14"});
+            this.comboBoxTableNumber.Location = new System.Drawing.Point(232, 80);
+            this.comboBoxTableNumber.MaxDropDownItems = 10;
             this.comboBoxTableNumber.Name = "comboBoxTableNumber";
-            this.comboBoxTableNumber.Size = new System.Drawing.Size(150, 27);
+            this.comboBoxTableNumber.Size = new System.Drawing.Size(151, 28);
             this.comboBoxTableNumber.TabIndex = 5;
-            this.comboBoxTableNumber.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // CreateCommandModal
             // 
@@ -105,7 +103,6 @@
             this.Controls.Add(this.lblSelectTable);
             this.Name = "CreateCommandModal";
             this.Text = "CreateCommandModal";
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxTableNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +114,6 @@
         private Label lblNombrePersonnes;
         private TextBox txtNbPersonnes;
         private Button btnCreerCommande;
-        private NumericUpDown comboBoxTableNumber;
+        private ComboBox comboBoxTableNumber;
     }
 }

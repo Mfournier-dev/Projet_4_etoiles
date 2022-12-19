@@ -15,7 +15,7 @@ namespace Projet_4_etoiles.GUI.Forms
     public partial class CreateCommandModal : Form
     {
         private CommandeDTO createdCommande;
-        private TablesDTO tables;
+        
         public CreateCommandModal()
         {
             InitializeComponent();
@@ -45,6 +45,11 @@ namespace Projet_4_etoiles.GUI.Forms
                 );
 
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void txtNbPersonnes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

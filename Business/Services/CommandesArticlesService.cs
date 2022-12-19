@@ -23,7 +23,7 @@ namespace Projet_4_etoiles.Business.Services
             return this.commandesArticlesDAO.GetAllArticlesForCommande(commandeId);
         }
         
-        public CommandesArticlesDTO CreateNewCommandeArticleLink( int articleId, int commandeId) 
+        public CommandesArticlesDTO CreateNewCommandeArticleLink( int articleId, int commandeId, int quantite) 
         {
             CommandesArticlesDTO commandeArticlesDTO = new CommandesArticlesDTO(articleId,commandeId, quantite);
             this.commandesArticlesDAO.Create(commandeArticlesDTO);

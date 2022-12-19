@@ -70,7 +70,7 @@ namespace Projet_4_etoiles.GUI.Forms
             { 
             
                 this.AddArticleToListView(article);
-                this.lblPrix.Text += article.Price.ToString();
+                
             }
             
         
@@ -78,9 +78,11 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void AddArticleToListView(MenuDTO article) 
         {
+            //CommandesArticlesDTO quantiteArticle = new CommandesArticlesDTO();
             ListViewItem lvItem = new ListViewItem(article.Name);
             lvItem.Tag = article.Id;
             this.listViewCommande.Items.Add(lvItem);
+            
         
         }
 
@@ -93,6 +95,7 @@ namespace Projet_4_etoiles.GUI.Forms
 
         private void comboBoxTableCommande_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             this.listViewCommande.Items.Clear();
             this.currentSelectedCommande = (CommandeDTO)this.comboBoxTableCommande.Items[this.comboBoxTableCommande.SelectedIndex];
             this.LoadCommandeFields(this.currentSelectedCommande);
@@ -147,6 +150,33 @@ namespace Projet_4_etoiles.GUI.Forms
                 this.comboBoxTableCommande.Items.Add(createdCommande);
                 this.comboBoxTableCommande.SelectedItem = createdCommande;
             }
+        }
+
+        private void btnSupprimerCommande_Click(object sender, EventArgs e)
+        {
+            if(this.currentSelectedCommande is not null) 
+            { 
+                MainService.GetInstance().GetCommandeService().DeleteCommande(this.currentSelectedCommande);
+            
+            }
+            this.ClearDetailsFields();
+            this.LoadCommandeSelector(MainService.GetInstance().GetCommandeService().GetAllCommandes());
+        }
+
+        private void ClearDetailsFields() 
+        {
+            this.lblPrix.Text = "$";
+            this.lblNombreClientsValue.Text = "";
+            this.lblNumeroTableValue.Text = "";
+            this.comboBoxTableCommande.Items.Clear();
+
+
+        }
+
+        private void btnModifierQuantite_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Work in progress");
+            //this.btnSauvegarderModification.Enabled = true;
         }
     }
 }

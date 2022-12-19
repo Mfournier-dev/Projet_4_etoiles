@@ -46,6 +46,7 @@
             this.btnSupprimerArticle = new System.Windows.Forms.Button();
             this.btnRetourMenu = new System.Windows.Forms.Button();
             this.btnCreateCommande = new System.Windows.Forms.Button();
+            this.btnSupprimerCommande = new System.Windows.Forms.Button();
             this.groupBoxCommande.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,6 +163,7 @@
             this.btnModifierQuantite.TabIndex = 4;
             this.btnModifierQuantite.Text = "Modifier Quantité";
             this.btnModifierQuantite.UseVisualStyleBackColor = true;
+            this.btnModifierQuantite.Click += new System.EventHandler(this.btnModifierQuantite_Click);
             // 
             // listViewCommande
             // 
@@ -175,7 +177,7 @@
             this.listViewCommande.Size = new System.Drawing.Size(293, 358);
             this.listViewCommande.TabIndex = 3;
             this.listViewCommande.UseCompatibleStateImageBehavior = false;
-            this.listViewCommande.View = System.Windows.Forms.View.List;
+            this.listViewCommande.View = System.Windows.Forms.View.Details;
             this.listViewCommande.SelectedIndexChanged += new System.EventHandler(this.listViewCommande_SelectedIndexChanged);
             // 
             // colonneArticle
@@ -229,11 +231,22 @@
             this.btnCreateCommande.UseVisualStyleBackColor = true;
             this.btnCreateCommande.Click += new System.EventHandler(this.btnCreateCommande_Click);
             // 
+            // btnSupprimerCommande
+            // 
+            this.btnSupprimerCommande.Location = new System.Drawing.Point(610, 134);
+            this.btnSupprimerCommande.Name = "btnSupprimerCommande";
+            this.btnSupprimerCommande.Size = new System.Drawing.Size(178, 46);
+            this.btnSupprimerCommande.TabIndex = 9;
+            this.btnSupprimerCommande.Text = "Supprimer commande";
+            this.btnSupprimerCommande.UseVisualStyleBackColor = true;
+            this.btnSupprimerCommande.Click += new System.EventHandler(this.btnSupprimerCommande_Click);
+            // 
             // CommandesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 562);
+            this.Controls.Add(this.btnSupprimerCommande);
             this.Controls.Add(this.btnCreateCommande);
             this.Controls.Add(this.btnRetourMenu);
             this.Controls.Add(this.groupBoxCommande);
@@ -268,5 +281,6 @@
         private Label lblNumeroTableValue;
         private Label lblNumeroTable;
         private Button btnCreateCommande;
+        private Button btnSupprimerCommande;
     }
 }
